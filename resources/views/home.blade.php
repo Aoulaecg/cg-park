@@ -1,146 +1,183 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CG Park | Accueil</title>
-    <meta name="description" content="CG Park - Plateforme institutionnelle, moderne et premium.">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700|manrope:500,600,700,800" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-</head>
-<body>
+@extends('layouts.site')
+
+@section('page_title', __('home.page_title'))
+@section('meta_description', __('home.page_description'))
+@section('body_class', app()->getLocale() === 'ar' ? 'is-rtl' : '')
+
+@section('content')
     @php
-        // Vous pouvez modifier ici les images, titres et accroches des slides.
         $slides = [
-            [
-                'image' => asset('images/hero-cg-park-1.svg'),
-                'eyebrow' => 'CG Park',
-                'title' => 'Un cadre institutionnel moderne, sobre et ambitieux.',
-                'text' => 'Une vitrine pensée pour mettre en valeur la gouvernance, l’expertise et les réalisations du groupe.',
-            ],
-            [
-                'image' => asset('images/hero-cg-park-2.svg'),
-                'eyebrow' => 'Vision',
-                'title' => 'Des espaces conçus pour la performance, l’élégance et l’impact.',
-                'text' => 'Une communication visuelle claire qui reflète un positionnement professionnel et premium.',
-            ],
-            [
-                'image' => asset('images/hero-cg-park-3.svg'),
-                'eyebrow' => 'Références',
-                'title' => 'Une présence forte portée par une identité graphique maîtrisée.',
-                'text' => 'Un hero immersif avec de grands visuels, une navigation fluide et un rendu responsive.',
-            ],
+            ['image' => asset('assets/Mly2.png'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_1'), 'text' => __('home.hero_text_1')],
+            ['image' => asset('assets/HayRiad.png'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_2'), 'text' => __('home.hero_text_2')],
+            ['image' => asset('assets/OndaRabat.jpeg'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_3'), 'text' => __('home.hero_text_3')],
+        ];
+
+        $stats = [
+            ['value' => '20', 'label' => __('home.stat_parking_sites'), 'icon' => 'parking'],
+            ['value' => '+ 15 000', 'label' => __('home.stat_spaces_managed'), 'icon' => 'grid'],
+            ['value' => '10 +', 'label' => __('home.stat_cities'), 'icon' => 'location'],
+        ];
+
+        $partners = [
+            ['name' => 'Prefecture', 'image' => null],
+            ['name' => 'Partenaire 2', 'image' => asset('assets/Onda.png')],
+            ['name' => 'Partenaire 2', 'image' => asset('assets/CDG.png')],
+            ['name' => 'Partenaire 2', 'image' => asset('assets/Auda.png')],
+            ['name' => 'MSE', 'image' => null],
+            ['name' => 'Partenaire 2', 'image' => asset('assets/AlManar.png')],
+            ['name' => 'Partenaire 2', 'image' => asset('assets/Sapst.png')],
+        ];
+
+        $mobileApp = [
+            'eyebrow' => __('home.mobile_eyebrow'),
+            'title' => __('home.application_mobile'),
+            'description' => __('home.mobile_description'),
+            'button' => __('home.discover_application'),
+            'screen' => asset('assets/AppMobile.png'),
+            'app_store' => asset('images/app-store-badge.svg'),
+            'google_play' => asset('images/google-play-badge.svg'),
         ];
     @endphp
 
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="container header-inner">
-                <a href="{{ url('/') }}" class="brand" aria-label="Accueil CG Park">
-                    {{-- Remplacez simplement cette image si vous avez un autre logo officiel CG Park. --}}
-                    <img src="{{ asset('assets/logo.png') }}" alt="Logo CG Park" class="brand-logo">
-                    <span class="brand-text">
-                        <span class="brand-name">CG Park</span>
-                        <span class="brand-tagline">Aménagement, expertise et vision institutionnelle</span>
-                    </span>
-                </a>
+    <section class="hero-slider" aria-label="{{ __('home.hero_label') }}" data-slider>
+        <div class="hero-track" data-slider-track>
+            @foreach ($slides as $index => $slide)
+                <article
+                    class="hero-slide {{ $index === 0 ? 'is-active' : '' }}"
+                    style="--slide-bg: url('{{ $slide['image'] }}');"
+                    aria-hidden="{{ $index === 0 ? 'false' : 'true' }}"
+                    data-slide
+                >
+                    <div class="hero-overlay"></div>
 
-                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-toggle>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span class="sr-only">Ouvrir le menu</span>
-                </button>
+                    <div class="container hero-content">
+                        <div class="hero-copy">
+                            <h1 class="hero-title">{{ $slide['title'] }}</h1>
+                        </div>
+                    </div>
+                </article>
+            @endforeach
+        </div>
 
-                <nav class="site-nav" id="site-navigation" aria-label="Navigation principale" data-navigation>
-                    <a href="#gouvernance">Gouvernance</a>
-                    <a href="#apropos">À propos</a>
-                    <a href="#metiers">Nos métiers</a>
-                    <a href="#appels-offre">Appels d’offre et consultation</a>
-                </nav>
+        <button class="slider-control slider-control-prev" type="button" aria-label="{{ __('home.previous_slide') }}" data-slider-prev>
+            <span aria-hidden="true">&#10094;</span>
+        </button>
+        <button class="slider-control slider-control-next" type="button" aria-label="{{ __('home.next_slide') }}" data-slider-next>
+            <span aria-hidden="true">&#10095;</span>
+        </button>
+
+        <div class="hero-indicators" aria-label="{{ __('home.slider_navigation') }}">
+            @foreach ($slides as $index => $slide)
+                <button
+                    class="hero-indicator {{ $index === 0 ? 'is-active' : '' }}"
+                    type="button"
+                    aria-label="{{ __('home.go_to_slide', ['number' => $index + 1]) }}"
+                    aria-pressed="{{ $index === 0 ? 'true' : 'false' }}"
+                    data-slider-dot="{{ $index }}"
+                ></button>
+            @endforeach
+        </div>
+    </section>
+
+    <section class="home-stats" aria-label="{{ __('home.stats_label') }}">
+        <div class="container">
+            <div class="stats-shell">
+                @foreach ($stats as $index => $stat)
+                    <article class="stat-card" style="--stat-delay: {{ $index * 120 }}ms;">
+                        <div class="stat-icon" aria-hidden="true">
+                            @if ($stat['icon'] === 'parking')
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6 4h6a4 4 0 010 8H6z"></path>
+                                    <path d="M6 12v8"></path>
+                                </svg>
+                            @elseif ($stat['icon'] === 'grid')
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                            @else
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"></path>
+                                    <circle cx="12" cy="9" r="2.5"></circle>
+                                </svg>
+                            @endif
+                        </div>
+
+                        <div class="stat-copy">
+                            <p class="stat-value" data-target="{{ preg_replace('/[^0-9]/', '', $stat['value']) }}">0</p>
+                            <p class="stat-label">{{ $stat['label'] }}</p>
+                        </div>
+                    </article>
+                @endforeach
             </div>
-        </header>
+        </div>
+    </section>
 
-        <main>
-            <section class="hero-slider" aria-label="Mise en avant CG Park" data-slider>
-                <div class="hero-track" data-slider-track>
-                    @foreach ($slides as $index => $slide)
-                        <article
-                            class="hero-slide {{ $index === 0 ? 'is-active' : '' }}"
-                            style="--slide-bg: url('{{ $slide['image'] }}');"
-                            aria-hidden="{{ $index === 0 ? 'false' : 'true' }}"
-                            data-slide
-                        >
-                            <div class="hero-overlay"></div>
+    <section class="partners-section" id="partenaires" aria-label="{{ __('home.nos_partenaires') }}" data-reveal>
+        <div class="container">
+            <div class="partners-section-heading">
+                <p class="partners-section-eyebrow">{{ __('home.partners_eyebrow') }}</p>
+                <h2 class="partners-section-title">{{ __('home.nos_partenaires') }}</h2>
+                <p class="partners-section-text">{{ __('home.partners_intro') }}</p>
+            </div>
 
-                            <div class="container hero-content">
-                                <div class="hero-copy">
-                                    <p class="hero-eyebrow">{{ $slide['eyebrow'] }}</p>
-                                    <h1 class="hero-title">{{ $slide['title'] }}</h1>
-                                    <p class="hero-text">{{ $slide['text'] }}</p>
+            <div class="partners-carousel" data-partner-carousel>
+                <div class="partners-carousel-track" data-partner-track style="--partner-count: {{ count($partners) }};">
+                    @for ($copy = 0; $copy < 2; $copy++)
+                        <div class="partners-carousel-group" aria-hidden="{{ $copy === 1 ? 'true' : 'false' }}">
+                            @foreach ($partners as $partner)
+                                <article class="partner-card">
+                                <div class="partner-card-logo-wrap">
+                                    @if ($partner['image'])
+                                <img src="{{ $partner['image'] }}" alt="{{ $partner['name'] }}" class="partner-card-logo">
+                                    @else
+                                <span class="partner-card-text">{{ $partner['name'] }}</span>
+                                    @endif
                                 </div>
-                            </div>
-                        </article>
-                    @endforeach
+                                </article>
+                            @endforeach
+                        </div>
+                    @endfor
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <button class="slider-control slider-control-prev" type="button" aria-label="Slide précédent" data-slider-prev>
-                    <span aria-hidden="true">&#10094;</span>
-                </button>
-                <button class="slider-control slider-control-next" type="button" aria-label="Slide suivant" data-slider-next>
-                    <span aria-hidden="true">&#10095;</span>
-                </button>
+    <section class="mobile-app-section" id="application-mobile" aria-label="{{ __('home.application_mobile') }}">
+        <div class="container mobile-app-layout">
+            <div class="mobile-app-visual" data-reveal>
+                <!-- <span class="mobile-app-orb mobile-app-orb-large" aria-hidden="true"></span>
+                <span class="mobile-app-orb mobile-app-orb-small" aria-hidden="true"></span>
+                <span class="mobile-app-ring" aria-hidden="true"></span> -->
 
-                <div class="hero-indicators" aria-label="Navigation des slides">
-                    @foreach ($slides as $index => $slide)
-                        <button
-                            class="hero-indicator {{ $index === 0 ? 'is-active' : '' }}"
-                            type="button"
-                            aria-label="Afficher le slide {{ $index + 1 }}"
-                            aria-pressed="{{ $index === 0 ? 'true' : 'false' }}"
-                            data-slider-dot="{{ $index }}"
-                        ></button>
-                    @endforeach
+                <!-- <div class="phone-display-card"> -->
+                    <!-- <div class="phone-mockup"> -->
+                        <!-- <div class="phone-speaker" aria-hidden="true"></div>
+                        <div class="phone-camera" aria-hidden="true"></div> -->
+                        <div class="phone-screen">
+                            <img src="{{ $mobileApp['screen'] }}" alt="{{ __('home.application_mobile') }}">
+                        </div>
+                    <!-- </div> -->
+
+                    <div class="store-badges">
+                        <a href="#" class="store-badge-link" aria-label="{{ __('home.download_app_store') }}">
+                            <img src="{{ $mobileApp['app_store'] }}" alt="Download on the App Store">
+                        </a>
+                        <a href="#" class="store-badge-link" aria-label="{{ __('home.download_google_play') }}">
+                            <img src="{{ $mobileApp['google_play'] }}" alt="Get it on Google Play">
+                        </a>
+                    <!-- </div> -->
                 </div>
-            </section>
+            </div>
 
-            <section class="home-intro" id="apropos">
-                <div class="container intro-grid">
-                    <div class="intro-card intro-card-accent">
-                        <p class="section-label">À propos</p>
-                        <h2>Une présentation institutionnelle claire et contemporaine.</h2>
-                        <p>
-                            Cette page d’accueil est conçue pour valoriser l’image de CG Park avec un langage visuel premium,
-                            des contrastes élégants et une mise en page sobre inspirée des grandes plateformes institutionnelles.
-                        </p>
-                    </div>
-
-                    <div class="intro-card" id="gouvernance">
-                        <p class="section-label">Gouvernance</p>
-                        <p>
-                            Une structure lisible pour présenter la vision, l’organisation et les engagements stratégiques du groupe.
-                        </p>
-                    </div>
-
-                    <div class="intro-card" id="metiers">
-                        <p class="section-label">Nos métiers</p>
-                        <p>
-                            Un prolongement naturel de la page d’accueil pour orienter l’utilisateur vers les expertises clés.
-                        </p>
-                    </div>
-
-                    <div class="intro-card" id="appels-offre">
-                        <p class="section-label">Consultation</p>
-                        <p>
-                            Un espace prêt à accueillir les appels d’offre, documents et informations officielles à diffuser.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <script src="{{ asset('js/home.js') }}"></script>
-</body>
-</html>
+            <div class="mobile-app-content" data-reveal>
+                <p class="mobile-app-eyebrow">{{ $mobileApp['eyebrow'] }}</p>
+                <h2 class="mobile-app-title">{{ $mobileApp['title'] }}</h2>
+                <p class="mobile-app-text">{{ $mobileApp['description'] }}</p>
+                <!-- <a href="#" class="mobile-app-button">{{ $mobileApp['button'] }}</a> -->
+            </div>
+        </div>
+    </section>
+@endsection

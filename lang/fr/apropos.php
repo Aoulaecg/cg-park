@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'page_title' => 'À propos',
+    'page_description' => 'Découvrez la mission, les activités et le rôle de CGPark.',
+    'eyebrow' => 'Présentation institutionnelle',
+    'page_heading' => 'À propos',
+    'intro_text' => 'CGPark accompagne le développement d’une mobilité urbaine plus fluide, plus moderne et mieux organisée, à travers des solutions de stationnement innovantes et des services adaptés aux besoins des usagers et des territoires.',
+    'missions_title' => 'Missions',
+    'missions_text' => 'Assurer une gestion moderne et performante des espaces de stationnement, améliorer l’expérience des usagers et accompagner les collectivités dans le développement de solutions de mobilité urbaine durables.',
+    'activities_title' => 'Activités',
+    'activities_text' => 'CGPark intervient dans la conception, l’exploitation, la gestion et l’optimisation des parkings, tout en développant des outils et services innovants destinés à faciliter l’accès, l’organisation et la fluidité du stationnement.',
+    'roles_title' => 'Rôles',
+    'roles_text' => 'Notre rôle est de proposer des solutions fiables, accessibles et efficaces, en agissant comme opérateur de référence dans le domaine du stationnement et des services associés, au bénéfice des usagers, des partenaires et des villes.',
+    'services_label' => 'Expérience élargie',
+    'services_title' => 'Services annexes',
+    'services_intro' => 'CGPark ne se limite pas au stationnement. L’entreprise développe également des services complémentaires destinés à renforcer le confort, la fluidité et la qualité de l’expérience usager.',
+    'service_1' => 'Lavage et prestations de proximité pour optimiser le temps des usagers.',
+    'service_2' => 'Bornes et services complémentaires pour accompagner les nouveaux usages urbains.',
+    'service_3' => 'Solutions de mobilité légère, trottinettes et dispositifs de connexion au dernier kilomètre.',
+    'service_4' => 'Accompagnement, orientation et confort de l’usager dans l’ensemble du parcours.',
+    'philosophy_label' => 'Notre philosophie',
+    'philosophy_quote' => '“Simplifier la vie à l’utilisateur grâce à des solutions de stationnement pratiques, innovantes et accessibles.”',
+    'philosophy_text' => 'Une vision orientée service, pensée pour réunir dans un même environnement des réponses utiles, accessibles et cohérentes avec un quotidien urbain plus fluide.',
+];

@@ -1,0 +1,280 @@
+.about-page {
+    background:
+        radial-gradient(circle at top left, rgba(63, 70, 242, 0.06), transparent 26%),
+        linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+}
+
+.about-hero {
+    position: relative;
+    padding: 78px 0 56px;
+    overflow: clip;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(11, 45, 82, 0.88), rgba(13, 55, 95, 0.72)),
+        url("../assets/HayRiad3.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.96;
+}
+
+.about-hero-inner,
+.about-feature-card[data-reveal],
+.about-services-content[data-reveal],
+.about-philosophy-card[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.about-hero-inner.is-visible,
+.about-feature-card.is-visible,
+.about-services-content.is-visible,
+.about-philosophy-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.about-hero-eyebrow {
+    margin: 0 0 14px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.about-hero-title {
+    margin: 0 0 18px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2.6rem, 5vw, 4.9rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.about-hero-text {
+    margin: 0 auto;
+    max-width: 60ch;
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-features-section {
+    padding: 56px 0 44px;
+}
+
+.about-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.about-feature-card {
+    padding: 30px 28px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(11, 45, 82, 0.08);
+    box-shadow: 0 20px 42px rgba(8, 28, 55, 0.08);
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.about-feature-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(199, 161, 74, 0.28);
+    box-shadow: 0 24px 48px rgba(8, 28, 55, 0.12);
+}
+
+.about-feature-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 22px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(63, 70, 242, 0.12), rgba(199, 161, 74, 0.18));
+    color: #3f46f2;
+}
+
+.about-feature-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.about-feature-title {
+    margin: 0 0 14px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-navy-deep);
+}
+
+.about-feature-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.82;
+    color: rgba(7, 27, 53, 0.78);
+}
+
+.about-services-section {
+    padding: 18px 0 90px;
+}
+
+.about-services-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+.about-services-content,
+.about-philosophy-card {
+    padding: 34px 32px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(11, 45, 82, 0.08);
+    box-shadow: 0 18px 42px rgba(8, 28, 55, 0.08);
+}
+
+.about-section-label,
+.about-philosophy-label {
+    margin: 0 0 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+}
+
+.about-section-title {
+    margin: 0 0 16px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    font-weight: 600;
+    color: var(--color-navy-deep);
+}
+
+.about-section-text,
+.about-philosophy-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.84;
+    color: rgba(7, 27, 53, 0.78);
+}
+
+.about-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 26px 0 0;
+    display: grid;
+    gap: 16px;
+}
+
+.about-services-item {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(11, 45, 82, 0.08);
+}
+
+.about-services-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.about-services-bullet {
+    width: 10px;
+    height: 10px;
+    margin-top: 8px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-gold), #d8c08b);
+    box-shadow: 0 0 0 6px rgba(199, 161, 74, 0.12);
+}
+
+.about-philosophy-card {
+    display: grid;
+    align-content: center;
+    gap: 18px;
+    background:
+        radial-gradient(circle at top right, rgba(199, 161, 74, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.98));
+}
+
+.about-philosophy-quote {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+    line-height: 1.45;
+    font-weight: 500;
+    color: var(--color-navy-deep);
+}
+
+@media (max-width: 1080px) {
+    .about-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-services-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .about-hero {
+        padding: 54px 0 40px;
+    }
+
+    .about-feature-card,
+    .about-services-content,
+    .about-philosophy-card {
+        padding: 24px 20px;
+        border-radius: 24px;
+    }
+
+    .about-feature-title {
+        font-size: 1.3rem;
+    }
+
+    .about-services-item {
+        grid-template-columns: 14px 1fr;
+        gap: 12px;
+    }
+}
+
+.is-rtl .about-hero-inner,
+.is-rtl .about-feature-card,
+.is-rtl .about-services-content,
+.is-rtl .about-philosophy-card {
+    text-align: right;
+}
+
+.is-rtl .about-services-item {
+    grid-template-columns: 1fr 16px;
+}
+
+.is-rtl .about-services-bullet {
+    order: 2;
+}

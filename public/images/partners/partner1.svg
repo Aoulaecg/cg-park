@@ -1,0 +1,8 @@
+<svg width="320" height="140" viewBox="0 0 320 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="140" rx="26" fill="#F6F9FC"/>
+  <circle cx="74" cy="70" r="28" fill="#0B2D52"/>
+  <path d="M61 70H86" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M73.5 57.5V82.5" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  <text x="122" y="66" fill="#0B2D52" font-family="Arial, sans-serif" font-size="26" font-weight="700">Partner One</text>
+  <text x="122" y="94" fill="#6D7C8F" font-family="Arial, sans-serif" font-size="16">Institutionnel</text>
+</svg>

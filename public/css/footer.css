@@ -1,0 +1,307 @@
+:root {
+    --footer-bg: #3F46F2;
+    --footer-bg-deep: #123b65;
+    --footer-text: rgba(255, 255, 255, 0.96);
+    --footer-text-soft: rgba(255, 255, 255, 0.88);
+    --footer-line: rgba(255, 255, 255, 0.72);
+    --footer-accent: #3F46F2;
+}
+
+.site-footer {
+    position: relative;
+    margin-top: 48px;
+    color: var(--footer-text);
+    background:
+        radial-gradient(circle at 24% 0%, rgba(255, 255, 255, 0.2) 0%, transparent 8%),
+        linear-gradient(180deg, var(--footer-bg) 0%, var(--footer-bg-deep) 100%);
+    overflow: clip;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+    gap: 44px;
+    padding: 64px 0 34px;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-brand-column {
+    max-width: 420px;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.footer-brand-logo {
+    width: min(100%, 235px);
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.footer-description {
+    margin: 0;
+    max-width: 36ch;
+    font-size: 1.03rem;
+    line-height: 1.75;
+    color: var(--footer-text-soft);
+}
+
+.footer-description strong {
+    color: var(--footer-text);
+    font-weight: 800;
+}
+
+.footer-partners {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 34px;
+}
+
+.footer-partner-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    border-radius: 18px;
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+}
+
+.footer-partner-logo {
+    width: 85%;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-partner-placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 70%;
+    border-radius: 14px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--footer-text);
+    background: rgba(63, 70, 242, 0.18);
+}
+
+.footer-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 10px 0 28px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--footer-text);
+}
+
+.footer-title::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: rgba(14, 36, 14, 0.6);
+}
+
+.footer-nav {
+    display: grid;
+    gap: 16px;
+}
+
+.footer-nav a,
+.footer-contact-text a,
+.footer-bottom-link {
+    color: var(--footer-text-soft);
+    transition: color 180ms ease, opacity 180ms ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible,
+.footer-contact-text a:hover,
+.footer-contact-text a:focus-visible,
+.footer-bottom-link:hover,
+.footer-bottom-link:focus-visible {
+    color: var(--footer-accent);
+}
+
+.footer-contact-list {
+    display: grid;
+    gap: 20px;
+}
+
+.footer-contact-item {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--footer-line);
+}
+
+.footer-contact-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.footer-contact-icon {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-top: 2px;
+    color: var(--footer-text);
+}
+
+.footer-contact-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.footer-contact-text p {
+    margin: 0;
+    line-height: 1.45;
+    color: var(--footer-text-soft);
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    color: var(--footer-text);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease; 
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+    transform: translateY(-2px);
+    background: var(--footer-accent);
+    border-color: var(--footer-accent);
+} 
+
+.footer-social-link svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+} 
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 0 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.52);
+}
+
+.footer-bottom-copy {
+    margin: 0;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.footer-bottom-link {
+    font-size: 0.92rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 1100px) {
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px 28px;
+    }
+
+    .footer-brand-column {
+        max-width: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .site-footer {
+        margin-top: 32px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 48px 0 28px;
+    }
+
+    .footer-title {
+        margin-top: 0;
+    }
+
+    .footer-partners {
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 24px;
+    }
+}
+
+.is-rtl .footer-title {
+    justify-content: flex-start;
+}
+
+.is-rtl .footer-title::before {
+    order: 2;
+}
+
+.is-rtl .footer-contact-item {
+    grid-template-columns: 1fr 30px;
+}
+
+.is-rtl .footer-contact-icon {
+    order: 2;
+}
+
+.is-rtl .footer-contact-text,
+.is-rtl .footer-description,
+.is-rtl .footer-nav,
+.is-rtl .footer-bottom {
+    text-align: right;
+}
+
+.is-rtl .footer-bottom {
+    direction: rtl;
+}

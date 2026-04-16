@@ -1,0 +1,566 @@
+.metiers-page {
+    background:
+        radial-gradient(circle at top left, rgba(63, 70, 242, 0.06), transparent 22%),
+        linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+}
+
+.metiers-hero,
+.city-hero,
+.parking-hero {
+    position: relative;
+    overflow: clip;
+}
+
+.metiers-hero {
+    padding: 78px 0 56px;
+}
+
+.metiers-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(11, 45, 82, 0.88), rgba(13, 55, 95, 0.72)),
+        url("../assets/HayRiad2.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.96;
+}
+
+.city-hero-media,
+.parking-hero-media {
+    position: absolute;
+    inset: 0;
+}
+
+.city-hero-media img,
+.parking-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.city-hero-overlay,
+.parking-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(11, 45, 82, 0.88), rgba(13, 55, 95, 0.62));
+}
+
+.city-hero,
+.parking-hero {
+    padding: 74px 0 58px;
+}
+
+.metiers-hero-inner,
+.city-hero-inner,
+.parking-hero-inner,
+.section-heading[data-reveal],
+.city-card[data-reveal],
+.parking-card[data-reveal],
+.parking-overview-card[data-reveal],
+.parking-info-panel[data-reveal],
+.parking-map-card[data-reveal],
+.parking-related-card[data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.metiers-hero-inner.is-visible,
+.city-hero-inner.is-visible,
+.parking-hero-inner.is-visible,
+.section-heading.is-visible,
+.city-card.is-visible,
+.parking-card.is-visible,
+.parking-overview-card.is-visible,
+.parking-info-panel.is-visible,
+.parking-map-card.is-visible,
+.parking-related-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.metiers-hero-inner,
+.city-hero-inner,
+.parking-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.metiers-hero-eyebrow {
+    margin: 0 0 14px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.metiers-hero-title {
+    margin: 0 0 18px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2.7rem, 5vw, 4.9rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.metiers-hero-text {
+    margin: 0 auto;
+    max-width: 60ch;
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.section-heading {
+    max-width: 780px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.section-label {
+    margin: 0 0 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+}
+
+.section-title {
+    margin: 0 0 16px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 600;
+    color: var(--color-navy-deep);
+}
+
+.section-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.84;
+    color: rgba(7, 27, 53, 0.76);
+}
+
+.cities-section,
+.parking-list-section,
+.parking-detail-section {
+    padding: 54px 0 88px;
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.city-card {
+    min-width: 0;
+}
+
+.city-card-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 28px;
+    background: #0f2340;
+    box-shadow: 0 20px 46px rgba(8, 28, 55, 0.1);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.city-card-link:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 58px rgba(8, 28, 55, 0.16);
+}
+
+.city-card-media {
+    position: relative;
+    height: 520px;
+}
+
+.city-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 340ms ease;
+}
+
+.city-card-link:hover .city-card-media img {
+    transform: scale(1.04);
+}
+
+.city-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 27, 53, 0.08) 0%, rgba(7, 27, 53, 0.72) 100%);
+}
+
+.city-card-content {
+    position: absolute;
+    inset: auto 0 0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 24px 24px 22px;
+    color: #ffffff;
+}
+
+.city-card-title {
+    margin: 0 0 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+    font-weight: 400;
+}
+
+.city-card-count {
+    margin: 0;
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.city-card-arrow {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #9aa4b1;
+    transition: transform 180ms ease, color 180ms ease;
+}
+
+.city-card-link:hover .city-card-arrow {
+    transform: translateX(4px);
+    color: var(--color-blue);
+}
+
+.city-card-arrow svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.breadcrumb {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 18px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.breadcrumb a {
+    color: inherit;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.parking-card-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(11, 45, 82, 0.08);
+    box-shadow: 0 18px 42px rgba(8, 28, 55, 0.08);
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.parking-card-link:hover {
+    transform: translateY(-6px);
+    border-color: rgba(199, 161, 74, 0.26);
+    box-shadow: 0 24px 48px rgba(8, 28, 55, 0.12);
+}
+
+.parking-card-media {
+    position: relative;
+    height: 250px;
+}
+
+.parking-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.parking-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 27, 53, 0.02) 0%, rgba(7, 27, 53, 0.34) 100%);
+}
+
+.parking-card-body {
+    padding: 22px 22px 24px;
+}
+
+.parking-card-badge {
+    display: inline-flex;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    background: rgba(63, 70, 242, 0.08);
+}
+
+.parking-card-title {
+    margin: 16px 0 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--color-navy-deep);
+}
+
+.parking-card-meta {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    color: rgba(7, 27, 53, 0.62);
+}
+
+.parking-card-description {
+    margin: 0 0 18px;
+    font-size: 0.96rem;
+    line-height: 1.72;
+    color: rgba(7, 27, 53, 0.76);
+}
+
+.parking-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    color: var(--color-blue);
+}
+
+.parking-card-cta::after {
+    content: "→";
+    font-size: 1rem;
+}
+
+.page-back-link {
+    margin-top: 34px;
+}
+
+.page-back-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(11, 45, 82, 0.08);
+    box-shadow: 0 12px 24px rgba(8, 28, 55, 0.06);
+    color: var(--color-navy);
+}
+
+.page-back-link a::before {
+    content: "←";
+}
+
+.parking-detail-layout,
+.parking-extra-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+    gap: 28px;
+    margin-bottom: 28px;
+}
+
+.parking-overview-card,
+.parking-info-panel,
+.parking-map-card,
+.parking-related-card {
+    padding: 34px 32px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(11, 45, 82, 0.08);
+    box-shadow: 0 18px 42px rgba(8, 28, 55, 0.08);
+}
+
+.parking-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.parking-fact-item,
+.parking-side-card {
+    padding: 18px 18px 20px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(241, 245, 250, 0.94));
+    border: 1px solid rgba(11, 45, 82, 0.06);
+}
+
+.parking-fact-label,
+.parking-side-label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(7, 27, 53, 0.48);
+}
+
+.parking-fact-value,
+.parking-side-value {
+    font-family: "Manrope", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.65;
+    color: var(--color-navy-deep);
+}
+
+.parking-info-panel {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+}
+
+.parking-map-placeholder {
+    display: grid;
+    place-items: center;
+    min-height: 260px;
+    border-radius: 24px;
+    margin-top: 24px;
+    background:
+        linear-gradient(135deg, rgba(11, 45, 82, 0.08), rgba(199, 161, 74, 0.08)),
+        #f8fafc;
+    border: 1px dashed rgba(11, 45, 82, 0.18);
+    color: var(--color-navy);
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+}
+
+.parking-related-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.parking-related-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(241, 245, 250, 0.94));
+    border: 1px solid rgba(11, 45, 82, 0.06);
+    transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.parking-related-item:hover {
+    transform: translateX(4px);
+    border-color: rgba(63, 70, 242, 0.18);
+}
+
+.parking-related-name {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    color: var(--color-navy-deep);
+}
+
+.parking-related-meta {
+    font-size: 0.9rem;
+    color: rgba(7, 27, 53, 0.58);
+}
+
+@media (max-width: 1180px) {
+    .cities-grid,
+    .parking-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 960px) {
+    .parking-detail-layout,
+    .parking-extra-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .metiers-hero,
+    .city-hero,
+    .parking-hero {
+        padding: 56px 0 42px;
+    }
+
+    .cities-grid,
+    .parking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .city-card-media {
+        height: 420px;
+    }
+
+    .parking-overview-card,
+    .parking-info-panel,
+    .parking-map-card,
+    .parking-related-card {
+        padding: 24px 20px;
+        border-radius: 24px;
+    }
+
+    .parking-facts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.is-rtl .metiers-hero-inner,
+.is-rtl .city-hero-inner,
+.is-rtl .parking-hero-inner,
+.is-rtl .section-heading,
+.is-rtl .parking-card-body,
+.is-rtl .parking-overview-card,
+.is-rtl .parking-info-panel,
+.is-rtl .parking-map-card,
+.is-rtl .parking-related-card {
+    text-align: right;
+}
+
+.is-rtl .city-card-content {
+    flex-direction: row-reverse;
+}
+
+.is-rtl .city-card-link:hover .city-card-arrow {
+    transform: translateX(-4px);
+}
+
+.is-rtl .breadcrumb {
+    direction: rtl;
+}
+
+.is-rtl .page-back-link a::before {
+    content: "→";
+}
+
+.is-rtl .parking-related-item:hover {
+    transform: translateX(-4px);
+}
