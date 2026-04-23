@@ -6,7 +6,7 @@ return [
     'eyebrow' => 'Organisation institutionnelle',
     'page_heading' => 'Gouvernance',
     'director_title' => 'Mot du directeur',
-    'director_initials' => 'HH',
+    'director_initials' => 'CGP',
     'director_caption' => 'Direction générale',
     'director_name' => 'M. Hamza El Hajoui',
     'director_message' => 'CGPark ...',

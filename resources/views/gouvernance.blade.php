@@ -11,12 +11,30 @@
 @section('content')
     @php
         $boardMembers = [
-            __('gouvernance.board_member_1'),
-            __('gouvernance.board_member_2'),
-            __('gouvernance.board_member_3'),
-            __('gouvernance.board_member_4'),
-            __('gouvernance.board_member_5'),
-            __('gouvernance.board_member_6'),
+            'M. Taoufik MARZOUKI ZEROUALI - Président du conseil',
+            'CDG Développement représentée par M.Taoufik MARZOUKI ZEROUALI',
+            'M. Mohammed Amine EL HAJHOUJ',
+            'M. Rashid BELQASMI',
+        ];
+
+        $auditCommitteeMembers = [
+            'M. Mohammed Amin EL HAJHOUJ - Président',
+            'Mme. Siham BENCHAOU',
+            'M. Rashid BELQASMI',
+            
+        ];
+
+        $investmentCommitteeMembers = [
+            'M. Taoufik MARZOUKI ZEROUALI - Président',
+            'Mme. Siham BENCHAOU',
+            'M. Brahim KHEIREDDINE',
+           
+        ];
+
+        $nominationCommitteeMembers = [
+            'M. Taoufik MARZOUKI ZEROUALI - Président',
+            'M. Rashid BELQASMI',
+            'M. Brahim KHEIREDDINE',
         ];
     @endphp
 
@@ -37,41 +55,103 @@
 
                 <div class="governance-card-body governance-director-body">
                     <div class="governance-director-aside">
-                        <div class="governance-director-avatar">
-                            <span>{{ __('gouvernance.director_initials') }}</span>
+                        <div class="governance-director-panel">
+                            <!-- <span class="governance-director-emblem" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M5 20V8.5L12 4L19 8.5V20"></path>
+                                    <path d="M9 20V13H15V20"></path>
+                                    <path d="M8 10H8.01"></path>
+                                    <path d="M16 10H16.01"></path>
+                                </svg>
+                            </span> -->
+                            <p class="governance-director-role">Directeur G&eacute;n&eacute;ral</p>
+                            <h3 class="governance-director-entity">CG Park</h3>
+                            <p class="governance-director-support">Vision strat&eacute;gique et pilotage institutionnel</p>
                         </div>
-                        <p class="governance-director-caption">{{ __('gouvernance.director_caption') }}</p>
                     </div>
 
                     <div class="governance-director-copy">
+                        <p class="governance-director-kicker">Direction g&eacute;n&eacute;rale</p>
                         <p class="governance-director-name">{{ __('gouvernance.director_name') }}</p>
-                        <p class="governance-director-text">{{ __('gouvernance.director_message') }}</p>
+                        <p class="governance-director-text">
+                            ...........
+                        </p>
+                      
                     </div>
                 </div>
             </article>
 
-            <article class="governance-card" data-reveal>
-                <header class="governance-card-header">
-                    <h2 class="governance-card-title">{{ __('gouvernance.board_title') }}</h2>
-                    <span class="governance-card-symbol" aria-hidden="true"></span>
-                </header>
-
-                <div class="governance-card-body">
-                    <ul class="governance-board-list">
-                        @foreach ($boardMembers as $member)
-                            <li class="governance-board-item">
-                                <span class="governance-board-icon" aria-hidden="true">
-                                    <svg viewBox="0 0 24 24">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M8 12.5L10.8 15.2L16.2 9.7"></path>
-                                    </svg>
-                                </span>
-                                <span class="governance-board-text">{{ $member }}</span>
-                            </li>
-                        @endforeach
-                    </ul>
+            <section class="governance-bodies-section" data-reveal>
+                <div class="governance-section-heading">
+                    <p class="governance-section-eyebrow">Organes de gouvernance</p>
+                    <h2 class="governance-section-title">Instances de pilotage</h2>
+                    <p class="governance-section-text">
+                        Les organes de gouvernance de CG Park accompagnent les grandes orientations strat&eacute;giques, le suivi des engagements et l&rsquo;&eacute;valuation des risques dans un cadre institutionnel clair et structur&eacute;.
+                    </p>
                 </div>
-            </article>
+
+                <div class="governance-organs-grid">
+                    <article class="governance-organ-card">
+                        <header class="governance-organ-header">
+                            <h3 class="governance-organ-title">Conseil d&rsquo;Administration</h3>
+                            <span class="governance-organ-index" aria-hidden="true">01</span>
+                        </header>
+                        <ul class="governance-organ-list">
+                            @foreach ($boardMembers as $member)
+                                <li class="governance-organ-item">
+                                    <span class="governance-organ-bullet" aria-hidden="true"></span>
+                                    <span class="governance-organ-text">{{ $member }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </article>
+
+                    <article class="governance-organ-card">
+                        <header class="governance-organ-header">
+                            <h3 class="governance-organ-title">Comit&eacute; d&rsquo;Audit et Risques</h3>
+                            <span class="governance-organ-index" aria-hidden="true">02</span>
+                        </header>
+                        <ul class="governance-organ-list">
+                            @foreach ($auditCommitteeMembers as $member)
+                                <li class="governance-organ-item">
+                                    <span class="governance-organ-bullet" aria-hidden="true"></span>
+                                    <span class="governance-organ-text">{{ $member }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </article>
+
+                    <article class="governance-organ-card">
+                        <header class="governance-organ-header">
+                            <h3 class="governance-organ-title">Comit&eacute; d&rsquo;Investissement et Engagements</h3>
+                            <span class="governance-organ-index" aria-hidden="true">03</span>
+                        </header>
+                        <ul class="governance-organ-list">
+                            @foreach ($investmentCommitteeMembers as $member)
+                                <li class="governance-organ-item">
+                                    <span class="governance-organ-bullet" aria-hidden="true"></span>
+                                    <span class="governance-organ-text">{{ $member }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </article>
+
+                    <article class="governance-organ-card">
+                        <header class="governance-organ-header">
+                            <h3 class="governance-organ-title">Comit&eacute; de Nomination et R&eacute;mun&eacute;ration</h3>
+                            <span class="governance-organ-index" aria-hidden="true">04</span>
+                        </header>
+                        <ul class="governance-organ-list">
+                            @foreach ($nominationCommitteeMembers as $member)
+                                <li class="governance-organ-item">
+                                    <span class="governance-organ-bullet" aria-hidden="true"></span>
+                                    <span class="governance-organ-text">{{ $member }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </article>
+                </div>
+            </section>
         </div>
     </section>
 @endsection

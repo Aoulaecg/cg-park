@@ -7,23 +7,23 @@
 @section('content')
     @php
         $slides = [
-            ['image' => asset('assets/Mly2.png'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_1'), 'text' => __('home.hero_text_1')],
-            ['image' => asset('assets/HayRiad.png'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_2'), 'text' => __('home.hero_text_2')],
-            ['image' => asset('assets/OndaRabat.jpeg'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_3'), 'text' => __('home.hero_text_3')],
+            ['image' => asset('assets/Acc1.jpeg'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_1'), 'text' => __('home.hero_text_1')],
+            ['image' => asset('assets/Acc2.png'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_2'), 'text' => __('home.hero_text_2')],
+            ['image' => asset('assets/Acc3.png'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_3'), 'text' => __('home.hero_text_3')],
+             ['image' => asset('assets/Acc4.png'), 'eyebrow' => __('home.hero_eyebrow'), 'title' => __('home.hero_title_4'), 'text' => __('home.hero_text_4')],
         ];
 
         $stats = [
-            ['value' => '20', 'label' => __('home.stat_parking_sites'), 'icon' => 'parking'],
-            ['value' => '+ 15 000', 'label' => __('home.stat_spaces_managed'), 'icon' => 'grid'],
-            ['value' => '10 +', 'label' => __('home.stat_cities'), 'icon' => 'location'],
+            ['value' => '27', 'label' => __('home.stat_parking_sites'), 'icon' => 'parking'],
+            ['value' => '11 650', 'label' => __('home.stat_spaces_managed'), 'icon' => 'grid'],
+            ['value' => '7', 'label' => __('home.stat_cities'), 'icon' => 'location'],
         ];
 
         $partners = [
-            ['name' => 'Prefecture', 'image' => null],
             ['name' => 'Partenaire 2', 'image' => asset('assets/Onda.png')],
-            ['name' => 'Partenaire 2', 'image' => asset('assets/CDG.png')],
+            ['name' => 'Partenaire 2', 'image' => asset('assets/AderFes.png')],
             ['name' => 'Partenaire 2', 'image' => asset('assets/Auda.png')],
-            ['name' => 'MSE', 'image' => null],
+            ['name' => 'Partenaire 2', 'image' => asset('assets/MSE.png')],
             ['name' => 'Partenaire 2', 'image' => asset('assets/AlManar.png')],
             ['name' => 'Partenaire 2', 'image' => asset('assets/Sapst.png')],
         ];
@@ -32,7 +32,6 @@
             'eyebrow' => __('home.mobile_eyebrow'),
             'title' => __('home.application_mobile'),
             'description' => __('home.mobile_description'),
-            'button' => __('home.discover_application'),
             'screen' => asset('assets/AppMobile.png'),
             'app_store' => asset('images/app-store-badge.svg'),
             'google_play' => asset('images/google-play-badge.svg'),
@@ -115,6 +114,50 @@
         </div>
     </section>
 
+    <section class="institutional-mobility-section" aria-labelledby="institutional-mobility-title" data-reveal>
+        <div class="container">
+            <div class="institutional-mobility-shell">
+                <div class="institutional-mobility-copy">
+                    <p class="institutional-mobility-eyebrow">Mobilit&eacute; &amp; r&eacute;seau international</p>
+                    <h2 class="institutional-mobility-title" id="institutional-mobility-title">CGPark &amp; l&rsquo;UITP</h2>
+                    <p class="institutional-mobility-lead">
+                        CGPark s&rsquo;inscrit dans une vision moderne de la mobilit&eacute; urbaine, o&ugrave; le stationnement constitue un levier essentiel de fluidit&eacute;, d&rsquo;accessibilit&eacute; et de qualit&eacute; de service.
+                    </p>
+                    <p class="institutional-mobility-text">
+                        Compagnie G&eacute;n&eacute;rale des Parkings &eacute;volue dans un &eacute;cosyst&egrave;me consacr&eacute; au stationnement intelligent et aux services facilitant les d&eacute;placements. Cette dynamique fait &eacute;cho aux enjeux port&eacute;s &agrave; l&rsquo;&eacute;chelle internationale par l&rsquo;UITP, organisation de r&eacute;f&eacute;rence du transport public et de la mobilit&eacute; durable.
+                    </p>
+
+                    <div class="institutional-mobility-highlights" aria-label="Domaines de r&eacute;f&eacute;rence">
+                        <span class="institutional-mobility-highlight">Mobilit&eacute; urbaine</span>
+                        <span class="institutional-mobility-highlight">Stationnement intelligent</span>
+                    </div>
+                </div>
+
+                <aside class="uitp-card" aria-label="Pr&eacute;sentation de l'UITP">
+                    <div class="uitp-card-header">
+                        <div>
+                            <p class="uitp-card-kicker">Association Internationale des Transports Publics</p>
+                            <h3 class="uitp-card-title">Union Internationale des Transports Publics</h3>
+                        </div>
+                    </div>
+
+                    <p class="uitp-card-text">
+                        L&rsquo;UITP (Union Internationale des Transports Publics / International Association of Public Transport) est le r&eacute;seau mondial de r&eacute;f&eacute;rence du transport public et de la mobilit&eacute; durable. Cr&eacute;&eacute;e en 1885, elle rassemble environ 2&nbsp;000 organisations membres dans pr&egrave;s de 100 pays et territoires autour de l&rsquo;innovation, de la performance et de la qualit&eacute; des r&eacute;seaux de transport.
+                    </p>
+
+                    <a
+                        class="uitp-card-link"
+                        href="https://www.uitp.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visiter le site de l&rsquo;UITP
+                    </a>
+                </aside>
+            </div>
+        </div>
+    </section>
+
     <section class="partners-section" id="partenaires" aria-label="{{ __('home.nos_partenaires') }}" data-reveal>
         <div class="container">
             <div class="partners-section-heading">
@@ -147,36 +190,22 @@
 
     <section class="mobile-app-section" id="application-mobile" aria-label="{{ __('home.application_mobile') }}">
         <div class="container mobile-app-layout">
-            <div class="mobile-app-visual" data-reveal>
-                <!-- <span class="mobile-app-orb mobile-app-orb-large" aria-hidden="true"></span>
-                <span class="mobile-app-orb mobile-app-orb-small" aria-hidden="true"></span>
-                <span class="mobile-app-ring" aria-hidden="true"></span> -->
-
-                <!-- <div class="phone-display-card"> -->
-                    <!-- <div class="phone-mockup"> -->
-                        <!-- <div class="phone-speaker" aria-hidden="true"></div>
-                        <div class="phone-camera" aria-hidden="true"></div> -->
-                        <div class="phone-screen">
-                            <img src="{{ $mobileApp['screen'] }}" alt="{{ __('home.application_mobile') }}">
-                        </div>
-                    <!-- </div> -->
-
-                    <div class="store-badges">
-                        <a href="#" class="store-badge-link" aria-label="{{ __('home.download_app_store') }}">
-                            <img src="{{ $mobileApp['app_store'] }}" alt="Download on the App Store">
-                        </a>
-                        <a href="#" class="store-badge-link" aria-label="{{ __('home.download_google_play') }}">
-                            <img src="{{ $mobileApp['google_play'] }}" alt="Get it on Google Play">
-                        </a>
-                    <!-- </div> -->
-                </div>
+            <div class="mobile-app-media" data-reveal>
+                <img class="mobile-app-image" src="{{ $mobileApp['screen'] }}" alt="{{ __('home.application_mobile') }}">
             </div>
 
             <div class="mobile-app-content" data-reveal>
                 <p class="mobile-app-eyebrow">{{ $mobileApp['eyebrow'] }}</p>
                 <h2 class="mobile-app-title">{{ $mobileApp['title'] }}</h2>
                 <p class="mobile-app-text">{{ $mobileApp['description'] }}</p>
-                <!-- <a href="#" class="mobile-app-button">{{ $mobileApp['button'] }}</a> -->
+                <div class="store-badges mobile-app-store-badges">
+                    <a href="#" class="store-badge-link" aria-label="{{ __('home.download_app_store') }}">
+                        <img src="{{ $mobileApp['app_store'] }}" alt="Download on the App Store">
+                    </a>
+                    <a href="#" class="store-badge-link" aria-label="{{ __('home.download_google_play') }}">
+                        <img src="{{ $mobileApp['google_play'] }}" alt="Get it on Google Play">
+                    </a>
+                </div>
             </div>
         </div>
     </section>

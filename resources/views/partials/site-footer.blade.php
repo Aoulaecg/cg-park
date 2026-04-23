@@ -36,7 +36,7 @@
                 <a href="{{ route('gouvernance') }}">{{ __('home.gouvernance') }}</a>
                 <a href="{{ route('apropos') }}">{{ __('home.a_propos') }}</a>
                 <a href="{{ route('metiers.index') }}">{{ __('home.nos_metiers') }}</a>
-                <a href="{{ route('home') . '#appels-offre' }}">{{ __('home.appels_offres_consultation') }}</a>
+                <a href="{{ route('appels-offres.index') }}">{{ __('home.appels_offres_consultation') }}</a>
             </nav>
         </div>
 
@@ -85,14 +85,19 @@
         <div class="footer-column">
             <h3 class="footer-title">{{ __('home.nous_suivre') }}</h3>
             <div class="footer-socials">
-            <a href="https://www.linkedin.com/company/TON-LIEN" 
-               target="_blank" 
-               class="footer-social-link" 
-               aria-label="LinkedIn">
-               <img src="{{ asset('assets/Linkedin.png') }}" 
-                    alt="LinkedIn" 
-                    class="footer-social-icon">
-            </a>
+                <a
+                    href="https://www.linkedin.com/company/compagnie-g%C3%A9n%C3%A9rale-des-parkings-cdg/posts/?feedView=all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer-social-card footer-social-linkedin"
+                    aria-label="Visiter la page LinkedIn de CGPark"
+                >
+                    <img
+                        src="{{ asset('assets/Linkedin.png') }}"
+                        alt="LinkedIn"
+                        class="footer-social-card-icon"
+                    >
+                </a>
             </div>
         </div>
     </div>

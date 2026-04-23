@@ -1,7 +1,7 @@
 .governance-page {
     background:
-        radial-gradient(circle at top center, rgba(199, 161, 74, 0.08), transparent 22%),
-        linear-gradient(180deg, #fbfbf8 0%, #f4f5f0 100%);
+        radial-gradient(circle at top center, rgba(63, 70, 242, 0.08), transparent 20%),
+        linear-gradient(180deg, #f8fafc 0%, #eff4f9 100%);
 }
 
 .governance-hero {
@@ -9,14 +9,16 @@
 }
 
 .governance-hero-inner,
-.governance-card[data-reveal] {
+.governance-card[data-reveal],
+.governance-bodies-section[data-reveal] {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 700ms ease, transform 700ms ease;
 }
 
 .governance-hero-inner.is-visible,
-.governance-card.is-visible {
+.governance-card.is-visible,
+.governance-bodies-section.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -32,7 +34,7 @@
     font-weight: 700;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: rgba(199, 161, 74, 0.9);
+    color: #3F46F2;
 }
 
 .governance-hero-title {
@@ -42,7 +44,10 @@
     font-weight: 300;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-gold);
+    color: #15457a;
+    background: linear-gradient(90deg, #3F46F2, #15457a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .governance-section {
@@ -51,14 +56,14 @@
 
 .governance-content {
     display: grid;
-    gap: 30px;
+    gap: 34px;
 }
 
 .governance-card {
-    border: 1px solid rgba(199, 161, 74, 0.78);
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 18px 48px rgba(8, 28, 55, 0.06);
+    border: 1px solid rgba(63, 70, 242, 0.24);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 20px 48px rgba(8, 28, 55, 0.06);
     overflow: hidden;
 }
 
@@ -67,117 +72,67 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 26px 30px 20px;
-    border-bottom: 1px solid rgba(199, 161, 74, 0.52);
+    padding: 28px 32px 22px;
+    border-bottom: 1px solid rgba(63, 70, 242, 0.18);
 }
 
 .governance-card-title {
     margin: 0;
     font-family: "Manrope", sans-serif;
     font-size: clamp(1.45rem, 2vw, 2rem);
-    font-weight: 400;
-    color: #b68d31;
+    font-weight: 500;
+    color: #15457a;
 }
 
 .governance-card-symbol {
-    width: 18px;
+    width: 26px;
     height: 2px;
     border-radius: 999px;
-    background: rgba(199, 161, 74, 0.88);
+    background: #3F46F2;
 }
 
 .governance-card-body {
-    padding: 30px 32px 34px;
+    padding: 34px 32px 36px;
 }
 
 .governance-director-body {
     display: grid;
-    grid-template-columns: minmax(180px, 230px) minmax(0, 1fr);
-    gap: 32px;
-    align-items: start;
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    gap: 38px;
+    align-items: center;
 }
 
 .governance-director-aside {
-    display: grid;
-    justify-items: center;
-    gap: 16px;
+    min-width: 0;
 }
 
-.governance-director-avatar {
-    width: 164px;
-    aspect-ratio: 1;
+.governance-director-panel {
+    display: grid;
+    justify-items: start;
+    gap: 14px;
+    min-height: 100%;
+    padding: 28px;
     border-radius: 28px;
-    display: grid;
-    place-items: center;
     background:
-        linear-gradient(145deg, rgba(199, 161, 74, 0.18), rgba(11, 45, 82, 0.12)),
-        #f7f3e6;
-    border: 1px solid rgba(199, 161, 74, 0.46);
+        linear-gradient(155deg, rgba(63, 70, 242, 0.12), rgba(21, 69, 122, 0.04)),
+        #f7faff;
+    border: 1px solid rgba(63, 70, 242, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.governance-director-avatar span {
-    font-family: "Manrope", sans-serif;
-    font-size: 2.6rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #b68d31;
-}
-
-.governance-director-caption {
-    margin: 0;
-    font-size: 0.92rem;
-    line-height: 1.6;
-    text-align: center;
-    color: rgba(7, 27, 53, 0.56);
-}
-
-.governance-director-name {
-    margin: 0 0 16px;
-    font-family: "Manrope", sans-serif;
-    font-size: clamp(1.4rem, 2vw, 2rem);
-    font-weight: 700;
-    color: var(--color-navy-deep);
-}
-
-.governance-director-text {
-    margin: 0;
-    max-width: 72ch;
-    font-size: 1.06rem;
-    line-height: 1.95;
-    color: rgba(7, 27, 53, 0.82);
-}
-
-.governance-board-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 18px;
-}
-
-.governance-board-item {
-    display: grid;
-    grid-template-columns: 44px 1fr;
-    gap: 16px;
-    align-items: center;
-    padding: 10px 0;
-    transition: transform 180ms ease, color 180ms ease;
-}
-
-.governance-board-item:hover {
-    transform: translateX(4px);
-}
-
-.governance-board-icon {
-    width: 34px;
-    height: 34px;
+.governance-director-emblem {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #121212;
+    width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #15457a, #3F46F2);
+    box-shadow: 0 14px 28px rgba(21, 69, 122, 0.18);
+    color: #ffffff;
 }
 
-.governance-board-icon svg {
+.governance-director-emblem svg {
     width: 34px;
     height: 34px;
     fill: none;
@@ -187,30 +142,210 @@
     stroke-linejoin: round;
 }
 
-.governance-board-text {
+.governance-director-role {
+    margin: 0;
     font-family: "Manrope", sans-serif;
-    font-size: clamp(1.06rem, 1.5vw, 1.34rem);
-    font-weight: 600;
-    line-height: 1.6;
-    color: #171717;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #3F46F2;
 }
 
-@media (max-width: 920px) {
+.governance-director-entity {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.55rem, 2.2vw, 2rem);
+    line-height: 1.12;
+    font-weight: 700;
+    color: var(--color-navy-deep);
+}
+
+.governance-director-support {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(7, 27, 53, 0.6);
+}
+
+.governance-director-copy {
+    position: relative;
+    padding-left: 8px;
+}
+
+.governance-director-kicker {
+    margin: 0 0 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(21, 69, 122, 0.62);
+}
+
+.governance-director-name {
+    margin: 0 0 18px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.08;
+    font-weight: 700;
+    color: var(--color-navy-deep);
+}
+
+.governance-director-text {
+    margin: 0;
+    max-width: 70ch;
+    font-size: 1.04rem;
+    line-height: 1.9;
+    color: rgba(7, 27, 53, 0.8);
+}
+
+.governance-director-text + .governance-director-text {
+    margin-top: 16px;
+}
+
+.governance-bodies-section {
+    display: grid;
+    gap: 24px;
+}
+
+.governance-section-heading {
+    max-width: 760px;
+}
+
+.governance-section-eyebrow {
+    margin: 0 0 12px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #3F46F2;
+}
+
+.governance-section-title {
+    margin: 0 0 14px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2rem, 3.2vw, 2.9rem);
+    font-weight: 600;
+    color: var(--color-navy-deep);
+}
+
+.governance-section-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.82;
+    color: rgba(7, 27, 53, 0.72);
+}
+
+.governance-organs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.governance-organ-card {
+    min-width: 0;
+    padding: 28px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(21, 69, 122, 0.1);
+    box-shadow: 0 18px 40px rgba(8, 28, 55, 0.06);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.governance-organ-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(63, 70, 242, 0.2);
+    box-shadow: 0 22px 42px rgba(8, 28, 55, 0.08);
+}
+
+.governance-organ-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(21, 69, 122, 0.1);
+}
+
+.governance-organ-title {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(1.16rem, 1.7vw, 1.45rem);
+    line-height: 1.42;
+    font-weight: 700;
+    color: #15457a;
+}
+
+.governance-organ-index {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    min-height: 46px;
+    padding: 8px 10px;
+    border-radius: 16px;
+    background: rgba(63, 70, 242, 0.08);
+    font-family: "Manrope", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #3F46F2;
+}
+
+.governance-organ-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.governance-organ-item {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 6px 0;
+}
+
+.governance-organ-bullet {
+    position: relative;
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+    border-radius: 999px;
+    background: rgba(63, 70, 242, 0.08);
+}
+
+.governance-organ-bullet::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 999px;
+    background: #3F46F2;
+}
+
+.governance-organ-text {
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.65;
+    color: rgba(7, 27, 53, 0.9);
+}
+
+@media (max-width: 980px) {
     .governance-hero {
         padding-top: 58px;
     }
 
-    .governance-director-body {
+    .governance-director-body,
+    .governance-organs-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .governance-director-aside {
-        justify-items: start;
-    }
-
-    .governance-director-caption {
-        text-align: left;
     }
 }
 
@@ -220,53 +355,63 @@
     }
 
     .governance-card-header {
-        padding: 20px 20px 16px;
+        padding: 22px 20px 18px;
     }
 
     .governance-card-body {
-        padding: 22px 20px 24px;
+        padding: 24px 20px 26px;
     }
 
-    .governance-director-avatar {
-        width: 132px;
+    .governance-director-panel,
+    .governance-organ-card {
+        padding: 22px 20px;
         border-radius: 24px;
     }
 
-    .governance-board-item {
-        grid-template-columns: 38px 1fr;
+    .governance-director-emblem {
+        width: 62px;
+        height: 62px;
+        border-radius: 18px;
+    }
+
+    .governance-director-name {
+        font-size: clamp(1.8rem, 9vw, 2.4rem);
+    }
+
+    .governance-organ-header {
+        gap: 14px;
+    }
+
+    .governance-organ-item {
+        grid-template-columns: 16px 1fr;
         gap: 12px;
     }
 
-    .governance-board-item:hover {
+    .governance-organ-card:hover {
         transform: none;
     }
 }
 
 .is-rtl .governance-hero-inner,
-.is-rtl .governance-card {
+.is-rtl .governance-card,
+.is-rtl .governance-bodies-section,
+.is-rtl .governance-section-heading {
     text-align: right;
 }
 
-.is-rtl .governance-card-header {
+.is-rtl .governance-card-header,
+.is-rtl .governance-organ-header {
     flex-direction: row-reverse;
 }
 
-.is-rtl .governance-director-aside {
+.is-rtl .governance-director-panel {
     justify-items: end;
 }
 
-.is-rtl .governance-director-caption {
-    text-align: right;
+.is-rtl .governance-organ-item {
+    grid-template-columns: 1fr 18px;
 }
 
-.is-rtl .governance-board-item {
-    grid-template-columns: 1fr 44px;
-}
-
-.is-rtl .governance-board-item:hover {
-    transform: translateX(-4px);
-}
-
-.is-rtl .governance-board-icon {
+.is-rtl .governance-organ-bullet {
     order: 2;
 }
