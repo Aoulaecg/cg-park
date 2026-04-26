@@ -42,17 +42,17 @@
             <div class="parking-grid">
                 @foreach ($parkings as $parking)
                     <article class="parking-card" data-reveal>
-                        <a href="{{ route('parkings.show', $parking['slug']) }}" class="parking-card-link">
+                        <a href="{{ route('parkings.show', $parking->slug) }}" class="parking-card-link">
                             <div class="parking-card-media">
-                                <img src="{{ asset($parking['image']) }}" alt="{{ $parking['name'] }}">
+                                <img src="{{ asset($parking->image) }}" alt="{{ $parking->name }}">
                                 <div class="parking-card-overlay"></div>
                             </div>
 
                             <div class="parking-card-body">
-                                <span class="parking-card-badge">{{ __('metiers.type_' . $parking['type']) }}</span>
-                                <h3 class="parking-card-title">{{ $parking['name'] }}</h3>
-                                <p class="parking-card-meta">{{ $parking['capacity'] }} {{ __('metiers.places') }} | {{ $parking['short_location'] }}</p>
-                                <p class="parking-card-description">{{ $parking['description'] }}</p>
+                                <span class="parking-card-badge">{{ __('metiers.type_' . $parking->type) }}</span>
+                                <h3 class="parking-card-title">{{ $parking->name }}</h3>
+                                <p class="parking-card-meta">{{ $parking->capacity }} {{ __('metiers.places') }} | {{ $parking->short_location }}</p>
+                                <p class="parking-card-description">{{ $parking->description }}</p>
                                 <span class="parking-card-cta">{{ __('metiers.view_details') }}</span>
                             </div>
                         </a>

@@ -9,45 +9,8 @@
 @endpush
 
 @section('content')
-    @php
-        $tenders = [
-            [
-                'object' => __('appels_offres.row_1_object'),
-                'deadline' => __('appels_offres.row_1_deadline'),
-                'download_path' => 'documents/appels-offres/maintenance-prestation.pdf',
-                'view_path' => 'documents/appels-offres/maintenance-prestation.pdf',
-            ],
-            [
-                'object' => __('appels_offres.row_2_object'),
-                'deadline' => __('appels_offres.row_2_deadline'),
-                'download_path' => 'documents/appels-offres/fourniture-equipements.pdf',
-                'view_path' => 'documents/appels-offres/fourniture-equipements.pdf',
-            ],
-            [
-                'object' => __('appels_offres.row_3_object'),
-                'deadline' => __('appels_offres.row_3_deadline'),
-                'download_path' => 'documents/appels-offres/exploitation-parking.pdf',
-                'view_path' => 'documents/appels-offres/exploitation-parking.pdf',
-            ],
-            [
-                'object' => __('appels_offres.row_4_object'),
-                'deadline' => __('appels_offres.row_4_deadline'),
-                'download_path' => 'documents/appels-offres/travaux-amenagement.pdf',
-                'view_path' => 'documents/appels-offres/travaux-amenagement.pdf',
-            ],
-        ];
-
-        $regulationPath = 'documents\Reglement-des-achats-CGPark.pdf';
-    @endphp
-
     <section class="tenders-hero">
         <div class="container tenders-hero-inner" data-reveal>
-            <!-- <nav class="tenders-breadcrumbs" aria-label="Breadcrumb">
-                <a href="{{ route('home') }}">{{ __('appels_offres.breadcrumb_home') }}</a>
-                <span aria-hidden="true">/</span>
-                <span>{{ __('appels_offres.breadcrumb_current') }}</span>
-            </nav> -->
-
             <p class="tenders-hero-eyebrow">{{ __('appels_offres.eyebrow') }}</p>
             <h1 class="tenders-hero-title">{{ __('appels_offres.page_heading') }}</h1>
             <p class="tenders-hero-text">{{ __('appels_offres.intro_text') }}</p>
@@ -73,24 +36,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tenders as $tender)
+                            @forelse ($appels as $appel)
                                 <tr>
-                                    <td data-label="{{ __('appels_offres.table_column_object') }}">{{ $tender['object'] }}</td>
+                                    <td data-label="{{ __('appels_offres.table_column_object') }}">
+                                        {{ $appel->objet }}
+                                    </td>
                                     <td data-label="{{ __('appels_offres.table_column_deadline') }}">
-                                        <span class="tenders-deadline">{{ $tender['deadline'] }}</span>
+                                        <span class="tenders-deadline">{{ $appel->date_limite_formatted ?: '—' }}</span>
                                     </td>
                                     <td data-label="{{ __('appels_offres.table_column_action') }}">
-                                        <div class="tenders-actions">
-                                            <a href="{{ asset($tender['download_path']) }}" class="tenders-action tenders-action-primary" download>
-                                                {{ __('appels_offres.download') }}
-                                            </a>
-                                            <a href="{{ asset($tender['view_path']) }}" class="tenders-action tenders-action-secondary" target="_blank" rel="noreferrer">
-                                                {{ __('appels_offres.view') }}
-                                            </a>
-                                        </div>
+                                        @if ($appel->fichier_path)
+                                            <div class="tenders-actions">
+                                                <a href="{{ Storage::url($appel->fichier_path) }}"
+                                                   class="tenders-action tenders-action-primary" download>
+                                                    {{ __('appels_offres.download') }}
+                                                </a>
+                                                <a href="{{ Storage::url($appel->fichier_path) }}"
+                                                   class="tenders-action tenders-action-secondary"
+                                                   target="_blank" rel="noreferrer">
+                                                    {{ __('appels_offres.view') }}
+                                                </a>
+                                            </div>
+                                        @else
+                                            <span style="color:rgba(7,27,53,0.4);font-size:0.9rem;">—</span>
+                                        @endif
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="3" style="text-align:center;padding:32px;color:rgba(7,27,53,0.5);">
+                                        Aucun appel d'offres disponible pour le moment.
+                                    </td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
