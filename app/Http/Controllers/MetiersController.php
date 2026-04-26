@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Parking;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 
@@ -22,49 +23,48 @@ class MetiersController extends Controller
 
         abort_unless($city, 404);
 
-        $parkings = $this->parkings()->where('city_slug', $slug)->values();
+        $parkings = Parking::active()->byCity($slug)->orderBy('sort_order')->get();
 
         return view('villes.show', [
-            'city' => $city,
+            'city'     => $city,
             'parkings' => $parkings,
         ]);
     }
 
     public function parking(string $slug): View
     {
-        $parking = $this->parkings()->firstWhere('slug', $slug);
+        $parking = Parking::active()->where('slug', $slug)->firstOrFail();
 
-        abort_unless($parking, 404);
+        $city = collect(config('cgpark.cities'))->get($parking->city_slug);
 
-        $city = collect(config('cgpark.cities'))->get($parking['city_slug']);
-        $relatedParkings = $this->parkings()
-            ->where('city_slug', $parking['city_slug'])
-            ->reject(fn (array $item) => $item['slug'] === $slug)
+        abort_unless($city, 404);
+
+        $relatedParkings = Parking::active()
+            ->byCity($parking->city_slug)
+            ->where('slug', '!=', $slug)
+            ->orderBy('sort_order')
             ->take(3)
-            ->values();
+            ->get();
 
         return view('parkings.show', [
-            'parking' => $parking,
-            'city' => $city,
+            'parking'         => $parking,
+            'city'            => $city,
             'relatedParkings' => $relatedParkings,
         ]);
     }
 
     protected function citiesWithParkingCounts(): Collection
     {
-        $parkings = $this->parkings();
+        $counts = Parking::active()
+            ->selectRaw('city_slug, count(*) as parking_count')
+            ->groupBy('city_slug')
+            ->pluck('parking_count', 'city_slug');
 
         return collect(config('cgpark.cities'))
-            ->map(function (array $city) use ($parkings) {
-                $city['parking_count'] = $parkings->where('city_slug', $city['slug'])->count();
-
+            ->map(function (array $city) use ($counts) {
+                $city['parking_count'] = $counts->get($city['slug'], 0);
                 return $city;
             })
             ->values();
-    }
-
-    protected function parkings(): Collection
-    {
-        return collect(config('cgpark.parkings'));
     }
 }
