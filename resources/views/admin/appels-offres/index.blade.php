@@ -92,11 +92,29 @@
                 </td>
                 <td>
                     @if ($appel->fichier_path)
-                        <a href="{{ \Illuminate\Support\Facades\Storage::url($appel->fichier_path) }}"
-                           target="_blank"
-                           style="display: inline-flex; align-items: center; gap: 5px; color: #3F46F2; font-size: 0.82rem; text-decoration: none;">
-                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                            {{ \Illuminate\Support\Str::limit($appel->fichier_nom, 20) }}
+                        @php
+                            $extension = strtolower(pathinfo($appel->fichier_path, PATHINFO_EXTENSION));
+                            $iconColor = match($extension) {
+                                'pdf' => '#ef4444',
+                                'zip', 'rar' => '#8b5cf6',
+                                'doc', 'docx' => '#3b82f6',
+                                default => '#64748b'
+                            };
+                        @endphp
+                        <a href="{{ route('console.appels-offres.download', $appel) }}"
+                           style="display: inline-flex; align-items: center; gap: 5px; color: {{ $iconColor }}; font-size: 0.82rem; text-decoration: none; font-weight: 600;">
+                            @if ($extension === 'zip' || $extension === 'rar')
+                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 11v6m-3-3h6"/>
+                                </svg>
+                            @else
+                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                            @endif
+                            <span style="text-transform: uppercase;">{{ $extension }}</span>
+                            {{ \Illuminate\Support\Str::limit($appel->fichier_nom, 15) }}
                         </a>
                     @else
                         <span style="color: #94a3b8;">—</span>

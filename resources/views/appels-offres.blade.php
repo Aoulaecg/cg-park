@@ -46,16 +46,28 @@
                                     </td>
                                     <td data-label="{{ __('appels_offres.table_column_action') }}">
                                         @if ($appel->fichier_path)
+                                            @php
+                                                $extension = strtolower(pathinfo($appel->fichier_path, PATHINFO_EXTENSION));
+                                                $isArchive = in_array($extension, ['zip', 'rar']);
+                                            @endphp
                                             <div class="tenders-actions">
-                                                <a href="{{ Storage::url($appel->fichier_path) }}"
-                                                   class="tenders-action tenders-action-primary" download>
+                                                <a href="{{ route('appels-offres.download', $appel) }}"
+                                                   class="tenders-action tenders-action-primary">
+                                                    @if ($isArchive)
+                                                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right:4px;">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11v6m-3-3h6"/>
+                                                        </svg>
+                                                    @endif
                                                     {{ __('appels_offres.download') }}
                                                 </a>
-                                                <a href="{{ Storage::url($appel->fichier_path) }}"
-                                                   class="tenders-action tenders-action-secondary"
-                                                   target="_blank" rel="noreferrer">
-                                                    {{ __('appels_offres.view') }}
-                                                </a>
+                                                @if (!$isArchive)
+                                                    <a href="{{ Storage::url($appel->fichier_path) }}"
+                                                       class="tenders-action tenders-action-secondary"
+                                                       target="_blank" rel="noreferrer">
+                                                        {{ __('appels_offres.view') }}
+                                                    </a>
+                                                @endif
                                             </div>
                                         @else
                                             <span style="color:rgba(7,27,53,0.4);font-size:0.9rem;">—</span>

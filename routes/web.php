@@ -31,6 +31,10 @@ Route::get('/parkings/{slug}', [MetiersController::class, 'parking'])->name('par
 
 Route::get('/locale/{locale}', [LocaleController::class, 'update'])->name('locale.switch');
 
+// ─── Téléchargement de fichiers ────────────────────────────────────────────
+
+Route::get('/appels-offres/download/{appel}', [AppelsOffresController::class, 'download'])->name('appels-offres.download');
+
 // ─── Console admin ──────────────────────────────────────────────────────────
 
 Route::prefix('console')->name('console.')->group(function () {
@@ -66,5 +70,9 @@ Route::prefix('console')->name('console.')->group(function () {
                 'update'  => 'appels-offres.update',
                 'destroy' => 'appels-offres.destroy',
             ]);
+
+        // Téléchargement de fichiers
+        Route::get('appels-offres/{appelsOffre}/download', [AdminAppelOffreController::class, 'download'])
+            ->name('appels-offres.download');
     });
 });

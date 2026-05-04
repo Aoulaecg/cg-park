@@ -8,6 +8,7 @@ use App\Models\AppelOffre;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AppelOffreController extends Controller
 {
@@ -84,5 +85,15 @@ class AppelOffreController extends Controller
 
         return redirect()->route('console.appels-offres.index')
             ->with('success', 'Appel d\'offres supprimé avec succès.');
+    }
+
+    public function download(AppelOffre $appelsOffre): StreamedResponse
+    {
+        abort_unless($appelsOffre->fichier_path, 404);
+
+        $filePath = $appelsOffre->fichier_path;
+        $fileName = $appelsOffre->fichier_nom ?? basename($filePath);
+
+        return Storage::disk('public')->download($filePath, $fileName);
     }
 }

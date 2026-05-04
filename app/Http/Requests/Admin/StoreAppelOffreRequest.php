@@ -24,7 +24,7 @@ class StoreAppelOffreRequest extends FormRequest
             'date_limite'      => ['nullable', 'date'],
             'statut'           => ['required', 'in:ouvert,ferme,archive'],
             'sort_order'       => ['integer', 'min:0'],
-            'fichier'          => [$isUpdate ? 'nullable' : 'nullable', 'file', 'mimes:pdf,doc,docx', 'max:10240'],
+            'fichier'          => [$isUpdate ? 'nullable' : 'nullable', 'file', 'mimes:pdf,doc,docx,zip,rar', 'max:20480'],
         ];
     }
 
@@ -35,8 +35,8 @@ class StoreAppelOffreRequest extends FormRequest
             'objet.required'   => 'L\'objet est obligatoire.',
             'statut.required'  => 'Le statut est obligatoire.',
             'statut.in'        => 'Le statut doit être : ouvert, fermé ou archivé.',
-            'fichier.mimes'    => 'Le fichier doit être un PDF, DOC ou DOCX.',
-            'fichier.max'      => 'Le fichier ne doit pas dépasser 10 Mo.',
+            'fichier.mimes'    => 'Le fichier doit être un PDF, DOC, DOCX, ZIP ou RAR.',
+            'fichier.max'      => 'Le fichier ne doit pas dépasser 20 Mo.',
         ];
     }
 }

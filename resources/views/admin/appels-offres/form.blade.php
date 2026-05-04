@@ -95,7 +95,7 @@
 
                 {{-- Fichier --}}
                 <div class="form-group form-grid-full">
-                    <label for="fichier" class="form-label">Document (PDF, DOC, DOCX)</label>
+                    <label for="fichier" class="form-label">Document (PDF, DOC, DOCX, ZIP)</label>
                     @if (isset($appel) && $appel->fichier_path)
                         <div style="margin-bottom:10px;padding:12px 16px;background:#f8fafc;border-radius:8px;border:1px solid var(--border);">
                             <span style="font-size:0.82rem;color:var(--text-muted);">Fichier actuel : </span>
@@ -108,7 +108,10 @@
                     @endif
                     <input type="file" id="fichier" name="fichier"
                            class="form-control {{ $errors->has('fichier') ? 'is-invalid' : '' }}"
-                           accept=".pdf,.doc,.docx">
+                           accept=".pdf,.doc,.docx,.zip,.rar">
+                    <p style="font-size:0.78rem;color:#94a3b8;margin-top:4px;">
+                        Formats acceptés : PDF, DOC, DOCX, ZIP, RAR • Taille max : 20 Mo
+                    </p>
                     @error('fichier')<span class="form-error">{{ $message }}</span>@enderror
                 </div>
 
