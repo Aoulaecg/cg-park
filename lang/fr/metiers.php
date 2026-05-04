@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'page_title' => 'Nos métiers',
+    'page_title' => 'Nos parkings',
     'page_description' => 'Découvrez les villes, parkings et savoir-faire de CGPark.',
     'eyebrow' => 'Solutions de stationnement',
-    'page_heading' => 'Nos métiers',
+    'page_heading' => 'Nos parkings',
     'intro_text' => 'CGPark développe des solutions de stationnement modernes et performantes à travers plusieurs villes du Maroc. Nos métiers couvrent la gestion, l’exploitation et l’optimisation des parkings, avec une approche orientée usager, mobilité urbaine et qualité de service.',
     'cities_label' => 'Présence territoriale',
     'cities_title' => 'Nos parkings',

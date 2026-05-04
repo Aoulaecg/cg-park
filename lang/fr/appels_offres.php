@@ -8,7 +8,7 @@ return [
     'intro_text' => "CGPark met a disposition cet espace dedie aux appels d'offres et consultations, afin de garantir un acces clair, structure et transparent aux opportunites, documents et informations utiles destines aux partenaires et prestataires.",
     // 'breadcrumb_home' => 'Accueil',
     // 'breadcrumb_current' => "Appels d'offres",
-    'table_label' => 'Consultations & marches',
+    'table_label' => 'Consultations',
     'table_title' => "Documents et opportunites ",
     'table_intro' => "Retrouvez les consultations et appels d'offres publies par CGPark, avec un acces direct aux documents telechargeables et aux informations de consultation.",
     'table_column_object' => 'Objet',

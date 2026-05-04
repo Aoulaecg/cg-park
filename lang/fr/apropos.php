@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'page_title' => 'À propos',
+    'page_title' => 'Nous connaitre',
     'page_description' => 'Découvrez la mission, les activités et le rôle de CGPark.',
     'eyebrow' => 'Présentation institutionnelle',
-    'page_heading' => 'À propos',
+    'page_heading' => 'Nous connaitre',
     'intro_text' => 'CGPark accompagne le développement d’une mobilité urbaine plus fluide, plus moderne et mieux organisée, à travers des solutions de stationnement innovantes et des services adaptés aux besoins des usagers et des territoires.',
     'missions_title' => 'Missions',
     'missions_text' => 'Assurer une gestion moderne et performante des espaces de stationnement, améliorer l’expérience des usagers et accompagner les collectivités dans le développement de solutions de mobilité urbaine durables.',
@@ -18,7 +18,7 @@ return [
     'service_1' => 'Une expérience utilisateur optimisée et fluide.',
     'service_2' => 'Des services pensés pour simplifier les déplacements urbains.',
     'service_3' => 'Un accompagnement adapté aux nouveaux usages de la mobilité.',
-    'service_4' => 'Un environnement conçu pour plus de confort et de praticité.',
+    'service_4' => 'An environment designed for enhanced comfort and practicality.',
     'philosophy_label' => 'Notre philosophie',
     'philosophy_quote' => '“Simplifier la vie à l’utilisateur grâce à des solutions de stationnement pratiques, innovantes et accessibles.”',
     'philosophy_text' => 'Une vision orientée service, pensée pour réunir dans un même environnement des réponses utiles, accessibles et cohérentes avec un quotidien urbain plus fluide.',

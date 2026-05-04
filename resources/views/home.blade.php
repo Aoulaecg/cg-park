@@ -145,14 +145,14 @@
                         L&rsquo;UITP (Union Internationale des Transports Publics / International Association of Public Transport) est le r&eacute;seau mondial de r&eacute;f&eacute;rence du transport public et de la mobilit&eacute; durable. Cr&eacute;&eacute;e en 1885, elle rassemble environ 2&nbsp;000 organisations membres dans pr&egrave;s de 100 pays et territoires autour de l&rsquo;innovation, de la performance et de la qualit&eacute; des r&eacute;seaux de transport.
                     </p>
 
-                    <a
+                    <!-- <a
                         class="uitp-card-link"
                         href="https://www.uitp.org/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         Visiter le site de l&rsquo;UITP
-                    </a>
+                    </a> -->
                 </aside>
             </div>
         </div>

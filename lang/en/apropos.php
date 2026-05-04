@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'page_title' => 'About',
+    'page_title' => 'About Us',
     'page_description' => 'Discover CGPark’s mission, activities and role.',
     'eyebrow' => 'Institutional presentation',
-    'page_heading' => 'About',
+    'page_heading' => 'About Us',
     'intro_text' => 'CGPark supports the development of smoother, more modern and better organized urban mobility through innovative parking solutions and services tailored to the needs of users and local communities.',
     'missions_title' => 'Missions',
     'missions_text' => 'Ensure modern and efficient management of parking spaces, improve the user experience and support local authorities in developing sustainable urban mobility solutions.',
@@ -13,13 +13,13 @@ return [
     'roles_title' => 'Roles',
     'roles_text' => 'Our role is to provide reliable, accessible and efficient solutions by acting as a leading operator in parking and related services for the benefit of users, partners and cities.',
     'services_label' => 'Extended experience',
-    'services_title' => 'Additional services',
+    'services_title' => 'Ancillary services',
     'services_intro' => 'CGPark goes beyond parking. The company also develops complementary services designed to enhance comfort, smoothness and the overall user experience.',
-    'service_1' => 'Car wash and nearby services to optimize users’ time.',
-    'service_2' => 'Charging points and complementary services supporting new urban uses.',
-    'service_3' => 'Light mobility solutions, scooters and last-mile connectivity services.',
+    'service_1' => 'A streamlined and optimized user experience.',
+    'service_2' => 'Services thoughtfully engineered to optimize and simplify urban mobility.',
+    'service_3' => 'Support tailored to evolving mobility usage patterns.',
     'service_4' => 'User assistance, guidance and comfort throughout the journey.',
     'philosophy_label' => 'Our philosophy',
-    'philosophy_quote' => '“Make life easier for users through practical, innovative and accessible parking solutions.”',
+    'philosophy_quote' => '“Simplifying users’ daily life through practical, innovative, and accessible parking solutions.”',
     'philosophy_text' => 'A service-driven vision designed to bring together useful, accessible and coherent solutions within the same environment for a smoother urban daily life.',
 ];

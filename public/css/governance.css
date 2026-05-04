@@ -77,10 +77,11 @@
 }
 
 .governance-card-title {
-    margin: 0;
+     margin: 0;
     font-family: "Manrope", sans-serif;
-    font-size: clamp(1.45rem, 2vw, 2rem);
-    font-weight: 500;
+    font-size: clamp(1.16rem, 1.7vw, 1.45rem);
+    line-height: 1.42;
+    font-weight: 700;
     color: #15457a;
 }
 
@@ -190,6 +191,7 @@
     line-height: 1.08;
     font-weight: 700;
     color: var(--color-navy-deep);
+    white-space: nowrap;
 }
 
 .governance-director-text {
