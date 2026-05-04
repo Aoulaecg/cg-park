@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CG Park | @yield('page_title', __('home.page_title'))</title>
     <meta name="description" content="@yield('meta_description', __('home.page_description'))">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/logo.png') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700|manrope:500,600,700,800" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">

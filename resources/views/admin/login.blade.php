@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Console Admin | CGPark</title>
     <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/logo.png') }}">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800" rel="stylesheet">
     <style>
