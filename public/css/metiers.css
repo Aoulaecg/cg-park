@@ -244,8 +244,9 @@
 }
 
 .city-card-link:hover .city-card-arrow {
-    transform: translateX(4px);
-    color: var(--color-blue);
+   transform: translateX(4px);
+    background: #3F46F2;
+    color: white;
 }
 
 .city-card-arrow svg {

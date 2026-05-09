@@ -19,14 +19,14 @@
 
         $auditCommitteeMembers = [
             'M. Mohammed Amin EL HAJHOUJ - Président',
-            'Mme. Siham BENCHAOU',
+            'Mᵐᵉ Siham BENCHAOU',
             'M. Rashid BELQASMI',
             
         ];
 
         $investmentCommitteeMembers = [
             'M. Taoufik MARZOUKI ZEROUALI - Président',
-            'Mme. Siham BENCHAOU',
+            'Mᵐᵉ Siham BENCHAOU',
             'M. Brahim KHEIREDDINE',
            
         ];
@@ -63,7 +63,7 @@
                     </div> -->
 
                     <div class="governance-director-copy">
-                        <p class="governance-director-kicker">Directeur g&eacute;n&eacute;rale</p>
+                        <p class="governance-director-kicker">Directeur g&eacute;n&eacute;ral</p>
                         <p class="governance-director-name">{{ __('gouvernance.director_name') }}</p>
                         <p class="governance-director-text">
                             ...........
@@ -75,18 +75,23 @@
 
             <section class="governance-bodies-section" data-reveal>
                 <div class="governance-section-heading">
-                    <p class="governance-section-eyebrow">Organes de gouvernance</p>
-                    <h2 class="governance-section-title">Instances de pilotage</h2>
+                 
+                    <h2 class="governance-section-title">Organes de gouvernance</h2>
                     <p class="governance-section-text">
                         Les organes de gouvernance de CG Park accompagnent les grandes orientations strat&eacute;giques, le suivi des engagements et l&rsquo;&eacute;valuation des risques dans un cadre institutionnel clair et structur&eacute;.
                     </p>
                 </div>
 
+
+
+               
+
+
                 <div class="governance-organs-grid">
                     <article class="governance-organ-card">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">Conseil d&rsquo;Administration</h3>
-                            <!-- <span class="governance-organ-index" aria-hidden="true"></span> -->
+                          
                         </header>
                         <ul class="governance-organ-list">
                             @foreach ($boardMembers as $member)
@@ -101,7 +106,7 @@
                     <article class="governance-organ-card">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">Comit&eacute; d&rsquo;Audit et Risques</h3>
-                            <!-- <span class="governance-organ-index" aria-hidden="true">02</span> -->
+                      
                         </header>
                         <ul class="governance-organ-list">
                             @foreach ($auditCommitteeMembers as $member)
@@ -116,7 +121,7 @@
                     <article class="governance-organ-card">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">Comit&eacute; d&rsquo;Investissement et Engagements</h3>
-                            <!-- <span class="governance-organ-index" aria-hidden="true">03</span> -->
+                          
                         </header>
                         <ul class="governance-organ-list">
                             @foreach ($investmentCommitteeMembers as $member)
@@ -131,7 +136,7 @@
                     <article class="governance-organ-card">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">Comit&eacute; de Nomination et R&eacute;mun&eacute;ration</h3>
-                            <!-- <span class="governance-organ-index" aria-hidden="true">04</span> -->
+                          
                         </header>
                         <ul class="governance-organ-list">
                             @foreach ($nominationCommitteeMembers as $member)

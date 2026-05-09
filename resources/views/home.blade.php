@@ -119,7 +119,7 @@
             <div class="institutional-mobility-shell">
                 <div class="institutional-mobility-copy">
                     <p class="institutional-mobility-eyebrow">Mobilit&eacute; &amp; r&eacute;seau international</p>
-                    <h2 class="institutional-mobility-title" id="institutional-mobility-title">CGPark &amp; l&rsquo;UITP</h2>
+                    <h2 class="institutional-mobility-title" id="institutional-mobility-title">CGPark</h2>
                     <p class="institutional-mobility-lead">
                         CGPark s&rsquo;inscrit dans une vision moderne de la mobilit&eacute; urbaine, o&ugrave; le stationnement constitue un levier essentiel de fluidit&eacute;, d&rsquo;accessibilit&eacute; et de qualit&eacute; de service.
                     </p>
@@ -128,8 +128,8 @@
                     </p>
 
                     <div class="institutional-mobility-highlights" aria-label="Domaines de r&eacute;f&eacute;rence">
-                        <span class="institutional-mobility-highlight">Mobilit&eacute; urbaine</span>
-                        <span class="institutional-mobility-highlight">Stationnement intelligent</span>
+                        <!-- <span class="institutional-mobility-highlight">Mobilit&eacute; urbaine</span>
+                        <span class="institutional-mobility-highlight">Stationnement intelligent</span> -->
                     </div>
                 </div>
 

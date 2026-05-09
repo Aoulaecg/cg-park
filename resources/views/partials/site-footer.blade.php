@@ -75,8 +75,8 @@
                         </svg>
                     </span>
                     <div class="footer-contact-text">
-                        <p>{{ __('home.address_line_1') }}</p>
-                        <p>{{ __('home.address_line_2') }}</p>
+                        <p>{!! nl2br(__('home.address_line_1')) !!}</p>
+                        <p>{!! nl2br(__('home.address_line_2')) !!}</p>
                     </div>
                 </div>
             </div>

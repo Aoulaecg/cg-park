@@ -18,7 +18,7 @@ return [
     'city_section_title' => 'Les parkings de :city',
     'city_parking_intro' => '{1} :count parking est actuellement présenté pour la ville de :city.|[2,*] :count parkings sont actuellement présentés pour la ville de :city.',
     'view_details' => 'Voir détails',
-    'back_to_cities' => 'Retour aux villes',
+    'back_to_cities' => 'Retour',
     'parking_meta' => 'Découvrez les informations utiles du parking :parking à :city.',
     'practical_information' => 'Informations pratiques',
     'overview_title' => 'Informations principales',
@@ -38,6 +38,6 @@ return [
     'related_parkings' => 'À proximité',
     'related_title' => 'Autres parkings à :city',
     'no_related' => 'Aucun autre parking à afficher pour cette ville pour le moment.',
-    'back_to_city' => 'Retour à :city',
+    'back_to_city' => 'Retour',
     'breadcrumb' => 'Fil d’Ariane',
 ];

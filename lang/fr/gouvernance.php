@@ -7,7 +7,7 @@ return [
     'page_heading' => 'Gouvernance',
     'director_title' => 'Direction Générale',
     // 'director_initials' => 'CGP',
-    'director_caption' => 'Directeur générale',
+    'director_caption' => 'Directeur général',
     'director_name' => 'M. Hamza ElHajoui',
     'director_message' => 'CGPark ...',
     'board_title' => 'Conseil d’administration',

@@ -16,13 +16,13 @@
         </div>
 
         <div class="container city-hero-inner" data-reveal>
-            <nav class="breadcrumb" aria-label="{{ __('metiers.breadcrumb') }}">
+            <!-- <nav class="breadcrumb" aria-label="{{ __('metiers.breadcrumb') }}">
                 <a href="{{ route('home') }}">{{ __('home.page_title') }}</a>
                 <span>/</span>
                 <a href="{{ route('metiers.index') }}">{{ __('home.nos_metiers') }}</a>
                 <span>/</span>
                 <span>{{ $city['name'] }}</span>
-            </nav>
+            </nav> -->
             <p class="metiers-hero-eyebrow">{{ __('metiers.city_label') }}</p>
             <h1 class="metiers-hero-title">{{ $city['name'] }}</h1>
             <p class="metiers-hero-text">{{ __('metiers.city_intro', ['city' => $city['name']]) }}</p>

@@ -22,7 +22,7 @@
         </div>
 
         <div class="container parking-hero-inner" data-reveal>
-            <nav class="breadcrumb" aria-label="{{ __('metiers.breadcrumb') }}">
+            <!-- <nav class="breadcrumb" aria-label="{{ __('metiers.breadcrumb') }}">
                 <a href="{{ route('home') }}">{{ __('home.page_title') }}</a>
                 <span>/</span>
                 <a href="{{ route('metiers.index') }}">{{ __('home.nos_metiers') }}</a>
@@ -30,7 +30,7 @@
                 <a href="{{ route('villes.show', $city['slug']) }}">{{ $city['name'] }}</a>
                 <span>/</span>
                 <span>{{ $parking->name }}</span>
-            </nav>
+            </nav> -->
 
             <p class="metiers-hero-eyebrow">{{ __('metiers.parking_label') }}</p>
             <h1 class="metiers-hero-title">{{ $parking->name }}</h1>
@@ -40,7 +40,7 @@
 
     <section class="parking-detail-section">
         <div class="container parking-detail-stack">
-            <article class="parking-detail-card parking-overview-card" data-reveal>
+            <!-- <article class="parking-detail-card parking-overview-card" data-reveal>
                 <p class="section-label">{{ __('metiers.parking_label') }}</p>
                 <h2 class="section-title">{{ __('metiers.practical_information') }}</h2>
                 <p class="section-text">{{ __('metiers.overview_intro', ['parking' => $parking->name, 'city' => $city['name']]) }}</p>
@@ -80,7 +80,7 @@
                         </article>
                     @endif
                 </div>
-            </article>
+            </article> -->
 
             <article class="parking-detail-card parking-map-card" data-reveal>
                 <p class="section-label">{{ __('metiers.location') }}</p>
@@ -90,7 +90,7 @@
                 </p>
 
                 <div class="parking-map-layout">
-                    <div class="parking-map-copy">
+                    <!-- <div class="parking-map-copy">
                         <div class="parking-map-info-grid">
                             <article class="parking-map-info-card">
                                 <span class="parking-map-info-label">Parking</span>
@@ -105,7 +105,7 @@
                                 <span class="parking-map-info-value">{{ $city['name'] }}</span>
                             </article>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="parking-map-visual">
                         @if ($parking->lat && $parking->lng)
@@ -124,6 +124,48 @@
                             </div>
                         @endif
                     </div>
+
+
+
+                    <div class="parking-facts-grid">
+                    <article class="parking-fact-item">
+                        <span class="parking-fact-label">{{ __('metiers.city') }}</span>
+                        <span class="parking-fact-value">{{ $city['name'] }}</span>
+                    </article>
+                    <article class="parking-fact-item">
+                        <span class="parking-fact-label">{{ __('metiers.capacity') }}</span>
+                        <span class="parking-fact-value">{{ $parking->capacity }} {{ __('metiers.places') }}</span>
+                    </article>
+                    <article class="parking-fact-item">
+                        <span class="parking-fact-label">{{ __('metiers.parking_type') }}</span>
+                        <span class="parking-fact-value">{{ __('metiers.type_' . $parking->type) }}</span>
+                    </article>
+
+                    @if ($isUnderground && $parking->levels)
+                        <article class="parking-fact-item">
+                            <span class="parking-fact-label">{{ __('metiers.levels') }}</span>
+                            <span class="parking-fact-value">{{ $parking->levels }}</span>
+                        </article>
+                    @endif
+
+                    @if ($parking->schedule)
+                        <article class="parking-fact-item">
+                            <span class="parking-fact-label">{{ __('metiers.useful_information') }}</span>
+                            <span class="parking-fact-value">{{ $parking->schedule }}</span>
+                        </article>
+                    @endif
+
+                    @if ($parking->rates)
+                        <article class="parking-fact-item">
+                            <span class="parking-fact-label">{{ __('metiers.rates') }}</span>
+                            <span class="parking-fact-value">{{ $parking->rates }}</span>
+                        </article>
+                    @endif
+                </div>
+
+
+
+
                 </div>
             </article>
         </div>

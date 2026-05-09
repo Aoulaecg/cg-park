@@ -11,7 +11,7 @@
 @section('content')
     <section class="metiers-hero">
         <div class="container metiers-hero-inner" data-reveal>
-            <p class="metiers-hero-eyebrow">{{ __('metiers.eyebrow') }}</p>
+            <!-- <p class="metiers-hero-eyebrow">{{ __('metiers.eyebrow') }}</p> -->
             <h1 class="metiers-hero-title">{{ __('metiers.page_heading') }}</h1>
             <p class="metiers-hero-text">{{ __('metiers.intro_text') }}</p>
         </div>
@@ -37,9 +37,9 @@
                             <div class="city-card-content">
                                 <div>
                                     <h3 class="city-card-title">{{ $city['name'] }}</h3>
-                                    <p class="city-card-count">
+                                    <!-- <p class="city-card-count">
                                         {{ trans_choice('metiers.parking_count', $city['parking_count'], ['count' => $city['parking_count']]) }}
-                                    </p>
+                                    </p> -->
                                 </div>
 
                                 <span class="city-card-arrow" aria-hidden="true">

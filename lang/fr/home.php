@@ -47,8 +47,8 @@ return [
     'footer_partners' => 'Partenaires institutionnels',
     'plan_du_site' => 'Plan du site',
     'nous_suivre' => 'Nous suivre',
-    'address_line_1' => 'Imm Mahaj 13-14 3ème étage,',
-    'address_line_2' => 'Mahaj Ryad, Hay Ryad - Rabat -',
+    'address_line_1' => "Immeuble Mahaj 13-14 \n3ème étage",
+    'address_line_2' => "Mahaj Ryad \nHay Ryad - Rabat",
     'footer_copyright' => '© 2026 CGPARK. TOUS DROITS RÉSERVÉS.',
     'view_conditions' => 'Voir les Conditions d’Utilisation',
 ];

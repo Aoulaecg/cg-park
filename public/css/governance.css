@@ -230,7 +230,7 @@
     font-family: "Manrope", sans-serif;
     font-size: clamp(2rem, 3.2vw, 2.9rem);
     font-weight: 600;
-    color: var(--color-navy-deep);
+    color: #15457a;
 }
 
 .governance-section-text {
@@ -417,3 +417,5 @@
 .is-rtl .governance-organ-bullet {
     order: 2;
 }
+
+

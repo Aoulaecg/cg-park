@@ -38,7 +38,7 @@
 
     <section class="about-hero">
         <div class="container about-hero-inner" data-reveal>
-            <p class="about-hero-eyebrow">{{ __('apropos.eyebrow') }}</p>
+            <!-- <p class="about-hero-eyebrow">{{ __('apropos.eyebrow') }}</p> -->
             <h1 class="about-hero-title">{{ __('apropos.page_heading') }}</h1>
             <p class="about-hero-text">{{ __('apropos.intro_text') }}</p>
         </div>
@@ -94,7 +94,7 @@
             </div>
 
             <aside class="about-philosophy-card" data-reveal>
-                <p class="about-philosophy-label">{{ __('apropos.philosophy_label') }}</p>
+                <!-- <p class="about-philosophy-label">{{ __('apropos.philosophy_label') }}</p> -->
                 <blockquote class="about-philosophy-quote">
                     {{ __('apropos.philosophy_quote') }}
                 </blockquote>
