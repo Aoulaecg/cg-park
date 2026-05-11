@@ -405,17 +405,18 @@
 
 .parking-facts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 28px;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .parking-fact-item,
 .parking-side-card {
-    padding: 18px 18px 20px;
+    padding: 10px 18px  12px;
     border-radius: 22px;
     background: linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(241, 245, 250, 0.94));
     border: 1px solid rgba(11, 45, 82, 0.06);
+    
 }
 
 .parking-fact-label,

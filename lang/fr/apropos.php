@@ -18,7 +18,7 @@ return [
     'service_1' => 'Une expérience utilisateur optimisée et fluide.',
     'service_2' => 'Des services pensés pour simplifier les déplacements urbains.',
     'service_3' => 'Un accompagnement adapté aux nouveaux usages de la mobilité.',
-    'service_4' => 'An environment designed for enhanced comfort and practicality.',
+    'service_4' => 'Assistance, accompagnement et confort de l’utilisateur tout au long du parcours.',
     'philosophy_label' => 'Notre philosophie',
     'philosophy_quote' => '“Simplifier la vie à l’utilisateur grâce à des solutions de stationnement pratiques, innovantes et accessibles.”',
     'philosophy_text' => 'Une vision orientée service, pensée pour réunir dans un même environnement des réponses utiles, accessibles et cohérentes avec un quotidien urbain plus fluide.',

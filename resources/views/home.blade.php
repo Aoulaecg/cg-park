@@ -198,14 +198,25 @@
                 <p class="mobile-app-eyebrow">{{ $mobileApp['eyebrow'] }}</p>
                 <h2 class="mobile-app-title">{{ $mobileApp['title'] }}</h2>
                 <p class="mobile-app-text">{{ $mobileApp['description'] }}</p>
-                <div class="store-badges mobile-app-store-badges">
+                <!-- <div class="store-badges mobile-app-store-badges">
                     <a href="#" class="store-badge-link" aria-label="{{ __('home.download_app_store') }}">
                         <img src="{{ $mobileApp['app_store'] }}" alt="Download on the App Store">
                     </a>
                     <a href="#" class="store-badge-link" aria-label="{{ __('home.download_google_play') }}">
                         <img src="{{ $mobileApp['google_play'] }}" alt="Get it on Google Play">
                     </a>
-                </div>
+                </div> -->
+
+                <div class="mobile-app-coming-soon">
+    <span class="coming-soon-badge">
+         Disponible prochainement
+    </span>
+
+    <p class="coming-soon-text">
+        Notre application mobile sera bientôt disponible
+        sur App Store et Google Play.
+    </p>
+</div>
             </div>
         </div>
     </section>

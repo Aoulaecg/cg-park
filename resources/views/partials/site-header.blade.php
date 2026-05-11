@@ -59,7 +59,45 @@
                 </button>
 
                 <div class="language-switcher-menu" id="language-menu" role="menu" data-language-menu>
-                    @foreach ($languageOptions as $language)
+
+
+                
+
+@foreach ($languageOptions as $language)
+
+    @if ($language['code'] === 'ar')
+
+        <a
+            href="#"
+            class="language-switcher-option"
+            role="menuitem"
+            lang="{{ $language['code'] }}"
+            onclick="event.preventDefault(); alert('La version arabe sera bientôt disponible.');"
+        >
+            <span class="language-switcher-option-code">{{ $language['label'] }}</span>
+            <span class="language-switcher-option-name">{{ $language['name'] }}</span>
+        </a>
+
+    @else
+
+        <a
+            href="{{ route('locale.switch', ['locale' => $language['code']]) }}"
+            class="language-switcher-option {{ $currentLocale === $language['code'] ? 'is-active' : '' }}"
+            role="menuitem"
+            lang="{{ $language['code'] }}"
+        >
+            <span class="language-switcher-option-code">{{ $language['label'] }}</span>
+            <span class="language-switcher-option-name">{{ $language['name'] }}</span>
+        </a>
+
+    @endif
+
+@endforeach
+
+
+
+
+                    <!-- @foreach ($languageOptions as $language)
                         <a
                             href="{{ route('locale.switch', ['locale' => $language['code']]) }}"
                             class="language-switcher-option {{ $currentLocale === $language['code'] ? 'is-active' : '' }}"
@@ -69,7 +107,12 @@
                             <span class="language-switcher-option-code">{{ $language['label'] }}</span>
                             <span class="language-switcher-option-name">{{ $language['name'] }}</span>
                         </a>
-                    @endforeach
+                    @endforeach -->
+
+
+
+
+
                 </div>
             </div>
         </div>
