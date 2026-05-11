@@ -244,6 +244,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
+    align-items: start;
 }
 
 .governance-organ-card {
@@ -253,13 +254,25 @@
     background: rgba(255, 255, 255, 0.94);
     border: 1px solid rgba(21, 69, 122, 0.1);
     box-shadow: 0 18px 40px rgba(8, 28, 55, 0.06);
-    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, padding 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    align-self: start;
+    will-change: padding;
+    contain: layout;
+}
+
+.governance-organ-card.collapsed {
+    padding: 16px 24px;
+    min-height: auto;
 }
 
 .governance-organ-card:hover {
     transform: translateY(-3px);
     border-color: rgba(63, 70, 242, 0.2);
     box-shadow: 0 22px 42px rgba(8, 28, 55, 0.08);
+}
+
+.governance-organ-card.collapsed:hover {
+    transform: translateY(-3px);
 }
 
 .governance-organ-header {
@@ -270,6 +283,93 @@
     padding-bottom: 18px;
     margin-bottom: 18px;
     border-bottom: 1px solid rgba(21, 69, 122, 0.1);
+    transition: padding-bottom 0.2s cubic-bezier(0.4, 0, 0.2, 1), margin-bottom 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
+    will-change: padding-bottom, margin-bottom;
+}
+
+.governance-organ-card.collapsed .governance-organ-header {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom-color: transparent;
+}
+
+.governance-collapse-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid rgba(63, 70, 242, 0.2);
+    border-radius: 10px;
+    background: rgba(63, 70, 242, 0.06);
+    color: #3F46F2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.governance-collapse-btn:hover {
+    background: rgba(63, 70, 242, 0.12);
+    border-color: rgba(63, 70, 242, 0.3);
+}
+
+.governance-collapse-btn svg {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.governance-collapse-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: 1px solid rgba(63, 70, 242, 0.25);
+    border-radius: 12px;
+    background: rgba(63, 70, 242, 0.08);
+    color: #3F46F2;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.governance-collapse-all-btn:hover {
+    background: rgba(63, 70, 242, 0.15);
+    border-color: rgba(63, 70, 242, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(63, 70, 242, 0.2);
+}
+
+.governance-collapse-all-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.governance-organ-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+    max-height: 2000px;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+    opacity: 1;
+    will-change: max-height, opacity;
+}
+
+.governance-organ-card.collapsed .governance-organ-list {
+    max-height: 0;
+    opacity: 0;
+}
+
+.governance-organ-list > * {
+    min-height: 0;
+}
+
+.governance-organ-list > * {
+    min-height: 0;
 }
 
 .governance-organ-title {
@@ -296,14 +396,6 @@
     font-weight: 800;
     letter-spacing: 0.08em;
     color: #3F46F2;
-}
-
-.governance-organ-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 14px;
 }
 
 .governance-organ-item {

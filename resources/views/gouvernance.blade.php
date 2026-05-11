@@ -82,18 +82,17 @@
                     </p>
                 </div>
 
-
-
-               
-
-
                 <div class="governance-organs-grid">
-                    <article class="governance-organ-card">
+                    <article class="governance-organ-card collapsed">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">Conseil d&rsquo;Administration</h3>
-                          
+                            <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="board">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
                         </header>
-                        <ul class="governance-organ-list">
+                        <ul class="governance-organ-list" data-collapse-content="board">
                             @foreach ($boardMembers as $member)
                                 <li class="governance-organ-item">
                                     <span class="governance-organ-bullet" aria-hidden="true"></span>
@@ -103,12 +102,16 @@
                         </ul>
                     </article>
 
-                    <article class="governance-organ-card">
+                    <article class="governance-organ-card collapsed">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">Comit&eacute; d&rsquo;Audit et Risques</h3>
-                      
+                            <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="audit">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
                         </header>
-                        <ul class="governance-organ-list">
+                        <ul class="governance-organ-list" data-collapse-content="audit">
                             @foreach ($auditCommitteeMembers as $member)
                                 <li class="governance-organ-item">
                                     <span class="governance-organ-bullet" aria-hidden="true"></span>
@@ -118,12 +121,16 @@
                         </ul>
                     </article>
 
-                    <article class="governance-organ-card">
+                    <article class="governance-organ-card collapsed">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">Comit&eacute; d&rsquo;Investissement et Engagements</h3>
-                          
+                            <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="investment">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
                         </header>
-                        <ul class="governance-organ-list">
+                        <ul class="governance-organ-list" data-collapse-content="investment">
                             @foreach ($investmentCommitteeMembers as $member)
                                 <li class="governance-organ-item">
                                     <span class="governance-organ-bullet" aria-hidden="true"></span>
@@ -133,12 +140,16 @@
                         </ul>
                     </article>
 
-                    <article class="governance-organ-card">
+                    <article class="governance-organ-card collapsed">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">Comit&eacute; de Nomination et R&eacute;mun&eacute;ration</h3>
-                          
+                            <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="nomination">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
                         </header>
-                        <ul class="governance-organ-list">
+                        <ul class="governance-organ-list" data-collapse-content="nomination">
                             @foreach ($nominationCommitteeMembers as $member)
                                 <li class="governance-organ-item">
                                     <span class="governance-organ-bullet" aria-hidden="true"></span>
@@ -152,3 +163,29 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const collapseButtons = document.querySelectorAll('.governance-collapse-btn');
+        
+        // Individual card collapse/expand
+        collapseButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.governance-organ-card');
+                const icon = this.querySelector('svg');
+                
+                if (card.classList.contains('collapsed')) {
+                    // Expand - rotate to UP
+                    card.classList.remove('collapsed');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    // Collapse - rotate to DOWN
+                    card.classList.add('collapsed');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    });
+</script>
+@endpush
