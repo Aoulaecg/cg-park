@@ -18,7 +18,22 @@
     </section>
 
     <section class="tenders-list-section">
+
+            
+    <section class="tenders-regulation-section">
         <div class="container">
+            <div class="tenders-regulation-card" data-reveal>
+                <p class="tenders-section-label">{{ __('appels_offres.regulation_label') }}</p>
+                <h2 class="tenders-regulation-title">{{ __('appels_offres.regulation_title') }}</h2>
+                <p class="tenders-regulation-text">{{ __('appels_offres.regulation_text') }}</p>
+                <a href="{{ asset($regulationPath) }}" class="tenders-regulation-button" download>
+                    {{ __('appels_offres.regulation_button') }}
+                </a>
+            </div>
+        </div>
+    </section>
+
+     <div class="container">
             <div class="tenders-section-heading" data-reveal>
                 <p class="tenders-section-label">{{ __('appels_offres.table_label') }}</p>
                 <h2 class="tenders-section-title">{{ __('appels_offres.table_title') }}</h2>
@@ -54,20 +69,20 @@
                                                 <a href="{{ route('appels-offres.download', $appel) }}"
                                                    class="tenders-action tenders-action-primary">
                                                     @if ($isArchive)
-                                                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right:4px;">
+                                                        <!-- <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right:4px;">
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 11v6m-3-3h6"/>
-                                                        </svg>
+                                                        </svg> -->
                                                     @endif
                                                     {{ __('appels_offres.download') }}
                                                 </a>
-                                                @if (!$isArchive)
+                                                <!-- @if (!$isArchive)
                                                     <a href="{{ Storage::url($appel->fichier_path) }}"
                                                        class="tenders-action tenders-action-secondary"
                                                        target="_blank" rel="noreferrer">
                                                         {{ __('appels_offres.view') }}
                                                     </a>
-                                                @endif
+                                                @endif -->
                                             </div>
                                         @else
                                             <span style="color:rgba(7,27,53,0.4);font-size:0.9rem;">—</span>
@@ -84,19 +99,6 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="tenders-regulation-section">
-        <div class="container">
-            <div class="tenders-regulation-card" data-reveal>
-                <p class="tenders-section-label">{{ __('appels_offres.regulation_label') }}</p>
-                <h2 class="tenders-regulation-title">{{ __('appels_offres.regulation_title') }}</h2>
-                <p class="tenders-regulation-text">{{ __('appels_offres.regulation_text') }}</p>
-                <a href="{{ asset($regulationPath) }}" class="tenders-regulation-button" download>
-                    {{ __('appels_offres.regulation_button') }}
-                </a>
             </div>
         </div>
     </section>

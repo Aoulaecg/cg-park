@@ -187,7 +187,12 @@
 .footer-socials {
     display: flex;
     align-items: center;
+    justify-content: center; /* centre horizontalement */
     gap: 14px;
+}
+
+.footer-social-linkedin {
+    margin-left: 2px; /* décale vers la droite */
 }
 
 .footer-social-card {
