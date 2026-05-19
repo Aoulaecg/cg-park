@@ -50,5 +50,5 @@ return [
     'address_line_1' => "Immeuble Mahaj 13-14 \n3ème étage",
     'address_line_2' => "Mahaj Ryad \nHay Ryad - Rabat",
     'footer_copyright' => '© 2026 CGPARK. TOUS DROITS RÉSERVÉS.',
-    'view_conditions' => 'Voir les Conditions d’Utilisation',
+    'view_conditions' => 'Mentions légales',
 ];
