@@ -104,6 +104,6 @@
 
     <div class="container footer-bottom">
         <p class="footer-bottom-copy">{{ __('home.footer_copyright') }}</p>
-        <a href="{{ asset('documents/CONDITIONS GENERALES DE VENTE.pdf') }}" class="footer-bottom-link" target="_blank" rel="noopener noreferrer">{{ __('home.view_conditions') }}</a>
+        <a href="{{ asset('documents/Mentions Légales CGPark.pdf') }}" class="footer-bottom-link" target="_blank" rel="noopener noreferrer">{{ __('home.view_conditions') }}</a>
     </div>
 </footer>
