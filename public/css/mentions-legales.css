@@ -1,0 +1,108 @@
+.mentions-page {
+    background:
+        radial-gradient(circle at top left, rgba(63, 70, 242, 0.06), transparent 26%),
+        linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+}
+
+.mentions-hero {
+    position: relative;
+    padding: 78px 0 56px;
+    overflow: clip;
+}
+
+.mentions-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(11, 45, 82, 0.88), rgba(13, 55, 95, 0.72)),
+        url("../assets/Mly2.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.96;
+}
+
+.mentions-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.mentions-hero-title {
+    margin: 0 0 18px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mentions-hero-subtitle {
+    margin: 0 auto;
+    max-width: 60ch;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mentions-content-section {
+    padding: 56px 0 80px;
+}
+
+.mentions-content {
+    max-width: 920px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 48px clamp(24px, 4vw, 56px);
+    border-radius: 14px;
+    box-shadow: 0 18px 48px rgba(11, 45, 82, 0.08);
+    color: #1f2937;
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+.mentions-content h2 {
+    margin: 36px 0 14px;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0b2d52;
+    letter-spacing: 0.02em;
+}
+
+.mentions-content h2:first-of-type {
+    margin-top: 28px;
+}
+
+.mentions-content p {
+    margin: 0 0 16px;
+    text-align: justify;
+}
+
+.mentions-list {
+    margin: 8px 0 16px;
+    padding-inline-start: 22px;
+}
+
+.mentions-list li {
+    margin-bottom: 6px;
+}
+
+.mentions-link {
+    color: #1f4ed8;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 200ms ease;
+}
+
+.mentions-link:hover,
+.mentions-link:focus {
+    color: #0b2d52;
+}
+
+.is-rtl .mentions-content p {
+    text-align: right;
+}

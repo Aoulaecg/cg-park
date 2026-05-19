@@ -104,6 +104,6 @@
 
     <div class="container footer-bottom">
         <p class="footer-bottom-copy">{{ __('home.footer_copyright') }}</p>
-        <a href="{{ asset('documents/Mentions Légales .pdf') }}" class="footer-bottom-link" target="_blank" rel="noopener noreferrer">{{ __('home.view_conditions') }}</a>
+        <a href="{{ route('mentions-legales') }}" class="footer-bottom-link">{{ __('home.view_conditions') }}</a>
     </div>
 </footer>
