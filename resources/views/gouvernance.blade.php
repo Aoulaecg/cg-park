@@ -66,21 +66,21 @@
                         <p class="governance-director-kicker">Directeur g&eacute;n&eacute;ral</p>
                         <p class="governance-director-name">{{ __('gouvernance.director_name') }}</p>
                         <p class="governance-director-text">
-                            Le Maroc connaît aujourd’hui <strong>une dynamique ambitieuse de transformation</strong> et de développement territorial.
+                            Le Maroc connaît aujourd’hui une dynamique ambitieuse de transformation et de développement territorial.
 
-Cette vision stratégique place les territoires, les villes et la qualité de vie des citoyens <strong>au cœur des priorités nationales</strong>, avec une attention particulière portée <strong>à la modernisation des infrastructures, à la durabilité et à l’attractivité urbaine.</strong>
+Cette vision stratégique place les territoires, les villes et la qualité de vie des citoyens au cœur des priorités nationales, avec une attention particulière portée à la modernisation des infrastructures, à la durabilité et à l’attractivité urbaine.<br><br>
 
-Dans ce contexte, <strong>la mobilité urbaine</strong> représente un enjeu majeur de développement et de compétitivité des territoires.
+Dans ce contexte,la mobilité urbaine représente un enjeu majeur de développement et de compétitivité des territoires.
 
-<strong>Le stationnement</strong>, longtemps considéré comme une fonction annexe, constitue désormais <strong>un levier essentiel</strong> d’organisation des flux, d’optimisation de l’espace urbain et d’amélioration de l’expérience des usagers.
+Le stationnement, longtemps considéré comme une fonction annexe, constitue désormais un levier essentiel d’organisation des flux, d’optimisation de l’espace urbain et d’amélioration de l’expérience des usagers.<br><br>
 
-Filiale de <strong>CDG Développement</strong>, la branche développement territorial du <strong>Groupe CDG, CG Park</strong> inscrit pleinement son action dans cette dynamique.
+Filiale de CDG Développement, la branche développement territorial du Groupe CDG, CG Park inscrit pleinement son action dans cette dynamique.
 
-Notre ambition est d’accompagner les collectivités, les territoires et les partenaires publics et privés dans la conception, le développement et l’exploitation de solutions de stationnement et de mobilité innovantes, performantes et durables.
+Notre ambition est d’accompagner les collectivités, les territoires et les partenaires publics et privés dans la conception, le développement et l’exploitation de solutions de stationnement et de mobilité innovantes, performantes et durables.<br><br>
 
-Au-delà de <strong>notre métier historique</strong>, nous faisons évoluer notre rôle vers celui d’un <strong>intégrateur de solutions de mobilité</strong>, mobilisant expertise, innovation, digitalisation et intelligence des données afin de contribuer à construire des villes plus fluides, plus connectées, plus attractives et plus humaines.
+Au-delà de notre métier historique, nous faisons évoluer notre rôle vers celui d’un intégrateur de solutions de mobilité, mobilisant expertise, innovation, digitalisation et intelligence des données afin de contribuer à construire des villes plus fluides, plus connectées, plus attractives et plus humaines.
 
-Parce <strong>qu’au-delà des infrastructures</strong>, notre mission est avant tout de contribuer au <strong>développement</strong> harmonieux des territoires et d’accompagner les <strong>villes de demain.</strong>
+Parce qu’au-delà des infrastructures, notre mission est avant tout de contribuer au développement harmonieux des territoires et d’accompagner les villes de demain.
                         </p>
                       
                     </div>

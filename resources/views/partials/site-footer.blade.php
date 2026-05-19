@@ -15,7 +15,7 @@
                 <img src="{{ $footerLogo }}" alt="Logo CG Park" class="footer-brand-logo">
             </a>
 
-            <p class="footer-description">{{ __('home.footer_description') }}</p>
+            <!-- <p class="footer-description">{{ __('home.footer_description') }}</p> -->
 
             <div class="footer-partners" aria-label="{{ __('home.footer_partners') }}">
                 @foreach ($footerPartners as $partner)

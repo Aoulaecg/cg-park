@@ -121,7 +121,7 @@
                     <p class="institutional-mobility-eyebrow">Mobilit&eacute; &amp; r&eacute;seau international</p>
                     <h2 class="institutional-mobility-title" id="institutional-mobility-title">CGPark</h2>
                     <p class="institutional-mobility-lead">
-                        CGPark s&rsquo;inscrit dans une vision moderne de la mobilit&eacute; urbaine, o&ugrave; le stationnement constitue un levier essentiel de fluidit&eacute;, d&rsquo;accessibilit&eacute; et de qualit&eacute; de service.
+                        CGPark, filiale du Groupe CDG, est un acteur majeur du stationnement. Spécialisée dans la construction, l’exploitation et la gestion des parkings, elle propose des solutions innovantes pour une mobilité urbaine efficace. Elle s&rsquo;inscrit dans une vision moderne de la mobilit&eacute; urbaine, o&ugrave; le stationnement constitue un levier essentiel de fluidit&eacute;, d&rsquo;accessibilit&eacute; et de qualit&eacute; de service.
                     </p>
                     <p class="institutional-mobility-text">
                         Compagnie G&eacute;n&eacute;rale des Parkings &eacute;volue dans un &eacute;cosyst&egrave;me consacr&eacute; au stationnement intelligent et aux services facilitant les d&eacute;placements. Cette dynamique fait &eacute;cho aux enjeux port&eacute;s &agrave; l&rsquo;&eacute;chelle internationale par l&rsquo;UITP, organisation de r&eacute;f&eacute;rence du transport public et de la mobilit&eacute; durable.

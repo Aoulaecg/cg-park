@@ -86,7 +86,7 @@
                 <p class="section-label">{{ __('metiers.location') }}</p>
                 <h2 class="section-title">{{ __('metiers.location_map') }}</h2>
                 <p class="section-text">
-                    Retrouvez les informations d'accès du parking {{ $parking->name }} et visualisez rapidement sa localisation dans {{ $city['name'] }}.
+                    Retrouvez les informations d'accès du parking {{ $parking->name }} et visualisez rapidement sa localisation.
                 </p>
 
                 <div class="parking-map-layout">

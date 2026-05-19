@@ -5,7 +5,7 @@ return [
     'page_description' => "Espace dedie aux appels d'offres, consultations et documents d'achat CG Park.",
     'eyebrow' => 'Espace professionnel',
     'page_heading' => "Appels d'offres et consultations",
-    'intro_text' => "CGPark met a disposition cet espace dedie aux appels d'offres et consultations, afin de garantir un acces clair, structure et transparent aux opportunités, documents et informations utiles destines aux partenaires et préstataires.",
+    'intro_text' => "CGPark met à disposition cet espace dédié aux appels d'offres et consultations, afin de garantir un accés clair, structuré et transparent aux opportunités, documents et informations utiles destinés aux partenaires et prestataires.",
     // 'breadcrumb_home' => 'Accueil',
     // 'breadcrumb_current' => "Appels d'offres",
     'table_label' => 'Consultations',
