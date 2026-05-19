@@ -98,7 +98,7 @@
 
 .governance-director-body {
     display: grid;
-    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    grid-template-columns:1fr;
     gap: 38px;
     align-items: center;
 }
@@ -196,10 +196,11 @@
 
 .governance-director-text {
     margin: 0;
-    max-width: 70ch;
+    max-width: 100%;
     font-size: 1.04rem;
     line-height: 1.9;
     color: rgba(7, 27, 53, 0.8);
+     text-align: justify;
 }
 
 .governance-director-text + .governance-director-text {
