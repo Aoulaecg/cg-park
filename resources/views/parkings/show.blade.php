@@ -130,7 +130,7 @@
                     <div class="parking-facts-grid">
                     <article class="parking-fact-item">
                         <span class="parking-fact-label">{{ __('metiers.city') }}</span>
-                        <span class="parking-fact-value">{{ $city['name'] }}</span>
+                        <span class="parking-fact-value">{{ $parkingAddress }}</span>
                     </article>
                     <article class="parking-fact-item">
                         <span class="parking-fact-label">{{ __('metiers.capacity') }}</span>

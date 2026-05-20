@@ -23,7 +23,7 @@ return [
     'practical_information' => 'Informations pratiques',
     'overview_title' => 'Informations principales',
     'overview_intro' => 'Toutes les informations utiles pour préparer votre venue au parking :parking, situé dans la ville de :city.',
-    'city' => 'Ville',
+    'city' => 'Adresse',
     'capacity' => 'Capacité',
     'parking_type' => 'Type de parking',
     'type_surface' => 'Surface',

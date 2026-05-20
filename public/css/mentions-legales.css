@@ -28,11 +28,11 @@
     max-width: 860px;
     margin: 0 auto;
     text-align: center;
-    color: #ffffff;
+    color: #3F46F2;
 }
 
 .mentions-hero-title {
-    margin: 0 0 18px;
+    margin: 50px 0 18px;
     font-family: "Manrope", sans-serif;
     font-size: clamp(2.4rem, 4.5vw, 4.2rem);
     font-weight: 300;

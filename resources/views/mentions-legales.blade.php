@@ -9,12 +9,12 @@
 @endpush -->
 
 @section('content')
-    <!-- <section class="mentions-hero">
+    <!-- <section class="mentions-hero"> -->
         <div class="container mentions-hero-inner">
             <h1 class="mentions-hero-title">{{ __('mentions.page_heading') }}</h1>
-            <p class="mentions-hero-subtitle">{{ __('mentions.subtitle') }}</p>
+            <!-- <p class="mentions-hero-subtitle">{{ __('mentions.subtitle') }}</p> -->
         </div>
-    </section> -->
+    <!-- </section> -->
 
     <section class="mentions-content-section">
         <div class="container mentions-content">
