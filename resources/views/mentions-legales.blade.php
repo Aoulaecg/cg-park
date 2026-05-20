@@ -4,17 +4,17 @@
 @section('meta_description', __('mentions.page_description'))
 @section('body_class', trim((app()->getLocale() === 'ar' ? 'is-rtl ' : '') . 'mentions-page'))
 
-@push('styles')
+<!-- @push('styles')
     <link rel="stylesheet" href="{{ asset('css/mentions-legales.css') }}">
-@endpush
+@endpush -->
 
 @section('content')
-    <section class="mentions-hero">
+    <!-- <section class="mentions-hero">
         <div class="container mentions-hero-inner">
             <h1 class="mentions-hero-title">{{ __('mentions.page_heading') }}</h1>
             <p class="mentions-hero-subtitle">{{ __('mentions.subtitle') }}</p>
         </div>
-    </section>
+    </section> -->
 
     <section class="mentions-content-section">
         <div class="container mentions-content">
@@ -33,7 +33,7 @@
             <p>{!! __('mentions.data_text_2') !!}</p>
             <p>
                 {!! __('mentions.data_text_3_prefix') !!}
-                <a href="{{ asset('documents/Mentions Légales .pdf') }}" target="_blank" rel="noopener noreferrer" class="mentions-link">{{ __('mentions.cgu_mobile_link') }}</a>{!! __('mentions.data_text_3_suffix') !!}
+                <a href="{{ asset('documents/CGU .pdf') }}" target="_blank" rel="noopener noreferrer" class="mentions-link">{{ __('mentions.cgu_mobile_link') }}</a>{!! __('mentions.data_text_3_suffix') !!}
             </p>
 
             <h2>{{ __('mentions.copyright_title') }}</h2>
