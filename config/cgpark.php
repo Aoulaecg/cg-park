@@ -33,8 +33,8 @@ return [
         'marrakech' => [
             'name' => 'Marrakech',
             'slug' => 'marrakech',
-            'image' => 'assets/Villekesh.webp',
-            'hero_image' => 'assets/Villekesh.webp',
+            'image' => 'assets/VilleKesh.webp',
+            'hero_image' => 'assets/VilleKesh.webp',
             'description' => 'Découvrez les parkings CGPark disponibles dans la ville de Marrakech.',
         ],
         'alhoceima' => [
