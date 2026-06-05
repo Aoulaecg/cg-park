@@ -17,7 +17,9 @@ Dans ce contexte, la mobilité urbaine représente un enjeu majeur de développe
 
 Le stationnement, longtemps considéré comme une fonction annexe, constitue désormais un levier essentiel d’organisation des flux, d’optimisation de l’espace urbain et d’amélioration de l’expérience des usagers.<br><br>
 
-Filiale de CDG Développement, la branche développement territorial du Groupe CDG, CG Park inscrit pleinement son action dans cette dynamique.
+Filiale de <a href="https://www.cdgdev.ma/" target="_blank" style="color:#0056b3 !important; text-decoration:underline;">
+    CDG Développement
+</a>, la branche développement territorial du Groupe CDG, CG Park inscrit pleinement son action dans cette dynamique.
 
 Notre ambition est d’accompagner les collectivités, les territoires et les partenaires publics et privés dans la conception, le développement et l’exploitation de solutions de stationnement et de mobilité innovantes, performantes et durables.<br><br>
 
@@ -39,22 +41,22 @@ Parce qu’au-delà des infrastructures, notre mission est avant tout de contrib
     'board_members' => [
         'M. Taoufik MARZOUKI ZEROUALI - Président du conseil',
         'CDG Développement représentée par M. Taoufik MARZOUKI ZEROUALI',
-        'M. Mohammed Amine EL HAJHOUJ',
+        'M. Mohammed Amin EL HAJHOUJ',
         'M. Rashid BELQASMI',
     ],
     'audit_committee_members' => [
         'M. Mohammed Amine EL HAJHOUJ - Président',
-        'Mᵐᵉ Siham BENCHAOU',
-        'M. Rashid BELQASMI',
-    ],
-    'investment_committee_members' => [
-        'M. Taoufik MARZOUKI ZEROUALI - Président',
-        'Mᵐᵉ Siham BENCHAOU',
-        'M. Brahim KHEIREDDINE',
-    ],
-    'nomination_committee_members' => [
-        'M. Taoufik MARZOUKI ZEROUALI - Président',
-        'M. Rashid BELQASMI',
-        'M. Brahim KHEIREDDINE',
-    ],
+         'Mᵐᵉ Siham BENCHAOU',
+         'M. Rashid BELQASMI',
+     ],
+     'investment_committee_members' => [
+         'M. Taoufik MARZOUKI ZEROUALI - Président',
+         'Mᵐᵉ Siham BENCHAOU',
+         'M. Brahim KHEIREDDINE',
+     ],
+     'nomination_committee_members' => [
+         'M. Taoufik MARZOUKI ZEROUALI - Président',
+         'M. Rashid BELQASMI',
+         'M. Brahim KHEIREDDINE',
+     ],
 ];

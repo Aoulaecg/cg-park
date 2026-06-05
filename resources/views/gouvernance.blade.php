@@ -18,7 +18,7 @@
 
     <section class="governance-hero">
         <div class="container governance-hero-inner" data-reveal>
-            <p class="governance-hero-eyebrow">{{ __('gouvernance.eyebrow') }}</p>
+            <!-- <p class="governance-hero-eyebrow">{{ __('gouvernance.eyebrow') }}</p> -->
             <h1 class="governance-hero-title">{{ __('gouvernance.page_heading') }}</h1>
         </div>
     </section>
@@ -83,11 +83,11 @@
                     <article class="governance-organ-card collapsed">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">{{ __('gouvernance.audit_committee_title') }}</h3>
-                            <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="audit">
+                            <!-- <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="audit">
                                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
-                            </button>
+                            </button> -->
                         </header>
                         <ul class="governance-organ-list" data-collapse-content="audit">
                             @foreach ($auditCommitteeMembers as $member)
@@ -102,11 +102,11 @@
                     <article class="governance-organ-card collapsed">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">{{ __('gouvernance.investment_committee_title') }}</h3>
-                            <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="investment">
+                            <!-- <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="investment">
                                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
-                            </button>
+                            </button> -->
                         </header>
                         <ul class="governance-organ-list" data-collapse-content="investment">
                             @foreach ($investmentCommitteeMembers as $member)
@@ -121,11 +121,11 @@
                     <article class="governance-organ-card collapsed">
                         <header class="governance-organ-header">
                             <h3 class="governance-organ-title">{{ __('gouvernance.nomination_committee_title') }}</h3>
-                            <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="nomination">
+                            <!-- <button class="governance-collapse-btn" aria-label="Toggle content" data-collapse-target="nomination">
                                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                                 </svg>
-                            </button>
+                            </button> -->
                         </header>
                         <ul class="governance-organ-list" data-collapse-content="nomination">
                             @foreach ($nominationCommitteeMembers as $member)

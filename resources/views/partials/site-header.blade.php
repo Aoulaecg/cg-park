@@ -7,8 +7,9 @@
     ];
 
     $navLinks = [
-        ['label' => __('home.gouvernance'), 'href' => route('gouvernance'), 'active' => request()->routeIs('gouvernance')],
+        
         ['label' => __('home.a_propos'), 'href' => route('apropos'), 'active' => request()->routeIs('apropos')],
+        ['label' => __('home.gouvernance'), 'href' => route('gouvernance'), 'active' => request()->routeIs('gouvernance')],
         ['label' => __('home.nos_metiers'), 'href' => route('metiers.index'), 'active' => request()->routeIs('metiers.*', 'villes.show', 'parkings.show')],
         ['label' => __('home.appels_offres_consultation'), 'href' => route('appels-offres.index'), 'active' => request()->routeIs('appels-offres.*')],
     ];

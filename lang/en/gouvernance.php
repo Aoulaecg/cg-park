@@ -39,22 +39,22 @@ Because beyond infrastructure, our mission is above all to contribute to the har
     'board_members' => [
         'Mr. Taoufik MARZOUKI ZEROUALI - Chairman of the Board',
         'CDG Développement represented by Mr. Taoufik MARZOUKI ZEROUALI',
-        'Mr. Mohammed Amine EL HAJHOUJ',
+        'Mr. Mohammed Amin EL HAJHOUJ',
         'Mr. Rashid BELQASMI',
     ],
-    'audit_committee_members' => [
-        'Mr. Mohammed Amine EL HAJHOUJ - Chairman',
-        'Mrs. Siham BENCHAOU',
-        'Mr. Rashid BELQASMI',
-    ],
-    'investment_committee_members' => [
-        'Mr. Taoufik MARZOUKI ZEROUALI - Chairman',
-        'Mrs. Siham BENCHAOU',
-        'Mr. Brahim KHEIREDDINE',
-    ],
-    'nomination_committee_members' => [
-        'Mr. Taoufik MARZOUKI ZEROUALI - Chairman',
-        'Mr. Rashid BELQASMI',
-        'Mr. Brahim KHEIREDDINE',
-    ],
+     'audit_committee_members' => [
+         'Mr. Mohammed Amine EL HAJHOUJ - Chairman',
+         'Mrs. Siham BENCHAOU',
+         'Mr. Rashid BELQASMI',
+     ],
+     'investment_committee_members' => [
+         'Mr. Taoufik MARZOUKI ZEROUALI - Chairman',
+         'Mrs. Siham BENCHAOU',
+         'Mr. Brahim KHEIREDDINE',
+     ],
+     'nomination_committee_members' => [
+         'Mr. Taoufik MARZOUKI ZEROUALI - Chairman',
+         'Mr. Rashid BELQASMI',
+         'Mr. Brahim KHEIREDDINE',
+     ],
 ];

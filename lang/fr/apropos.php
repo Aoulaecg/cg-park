@@ -5,7 +5,7 @@ return [
     'page_description' => 'Découvrez la mission, les activités et le rôle de CGPark.',
     'eyebrow' => 'Présentation institutionnelle',
     'page_heading' => 'Nous connaitre',
-    'intro_text' => 'CGPark accompagne le développement d’une mobilité urbaine plus fluide, plus moderne et mieux organisée, à travers des solutions de stationnement innovantes et des services adaptés aux besoins des usagers et des territoires.',
+    'intro_text' => 'CGPark accompagne le développement d’une mobilité urbaine plus fluide, plus moderne et mieux organisée, à travers des solutions de stationnement innovantes et des services adaptés aux besoins des territoires et des usagers .',
     'missions_title' => 'Missions',
     'missions_text' => 'Assurer une gestion moderne et performante des espaces de stationnement, améliorer l’expérience des usagers et accompagner les collectivités dans le développement de solutions de mobilité urbaine durables.',
     'activities_title' => 'Activités',
