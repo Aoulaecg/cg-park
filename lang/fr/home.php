@@ -22,6 +22,9 @@ return [
     'hero_title_2' => 'Des solutions intelligentes pour le stationnement urbain',
     'hero_title_3' => 'Des déplacements plus intelligents et fluides',
     'hero_title_4' => 'Une nouvelle vision du stationnement urbain',
+
+    
+     
     'previous_slide' => 'Slide précédent',
     'next_slide' => 'Slide suivant',
     'slider_navigation' => 'Navigation des slides',

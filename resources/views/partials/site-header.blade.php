@@ -64,9 +64,9 @@
 
                 
 
-@foreach ($languageOptions as $language)
+<!-- @foreach ($languageOptions as $language) -->
 
-    @if ($language['code'] === 'ar')
+    <!-- @if ($language['code'] === 'ar')
 
         <a
             href="#"
@@ -91,14 +91,14 @@
             <span class="language-switcher-option-name">{{ $language['name'] }}</span>
         </a>
 
-    @endif
+    @endif -->
 
-@endforeach
-
-
+<!-- @endforeach -->
 
 
-                    <!-- @foreach ($languageOptions as $language)
+
+
+                    @foreach ($languageOptions as $language)
                         <a
                             href="{{ route('locale.switch', ['locale' => $language['code']]) }}"
                             class="language-switcher-option {{ $currentLocale === $language['code'] ? 'is-active' : '' }}"
@@ -108,7 +108,7 @@
                             <span class="language-switcher-option-code">{{ $language['label'] }}</span>
                             <span class="language-switcher-option-name">{{ $language['name'] }}</span>
                         </a>
-                    @endforeach -->
+                    @endforeach
 
 
 

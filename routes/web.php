@@ -27,6 +27,12 @@ Route::get('/mentions-legales', function () {
     return view('mentions-legales');
 })->name('mentions-legales');
 
+
+Route::view('/politique-confidentialite', 'politique-confidentialite')
+    ->name('politique-confidentialite');
+
+    
+
 Route::get('/appels-offres-et-consultation', [AppelsOffresController::class, 'index'])->name('appels-offres.index');
 
 Route::get('/nos-metiers', [MetiersController::class, 'index'])->name('metiers.index');

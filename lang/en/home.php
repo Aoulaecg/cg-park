@@ -39,6 +39,9 @@ return [
     'mobile_description' => 'With the CG Park mobile app, easily find a parking space near you, enjoy a simple, fast and secure parking experience, and benefit from a modern service designed to simplify your daily journeys.',
     'discover_application' => 'Discover the app',
     'download_app_store' => 'Download on the App Store',
+
+
+
     'download_google_play' => 'Download on Google Play',
     'intro_title' => 'A clear and contemporary institutional presentation.',
     'intro_text' => 'This homepage is designed to showcase CG Park through a premium visual language, refined contrasts and a sober layout inspired by major institutional platforms.',

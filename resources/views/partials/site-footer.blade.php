@@ -63,7 +63,7 @@
                         </svg>
                     </span>
                     <div class="footer-contact-text">
-                        <p><a href="mailto:cgp@cdg-cgpark.com">cgp@cdg-cgpark.com</a></p>
+                        <p><a href="mailto:cgp@cdg-cgpark.com">cgpark@cdg-cgpark.com</a></p>
                     </div>
                 </div>
 
@@ -105,5 +105,13 @@
     <div class="container footer-bottom">
         <p class="footer-bottom-copy">{{ __('home.footer_copyright') }}</p>
         <a href="{{ route('mentions-legales') }}" class="footer-bottom-link">{{ __('home.view_conditions') }}</a>
+        
+        
+        
+        <a href="{{ route('politique-confidentialite') }}" class="footer-bottom-link">
+    Politique de confidentialité
+</a>
+
+
     </div>
 </footer>
