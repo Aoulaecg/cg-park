@@ -20,13 +20,23 @@ class AppelsOffresController extends Controller
         return view('appels-offres', compact('appels', 'regulationPath'));
     }
 
+
+
     public function download(AppelOffre $appel): StreamedResponse
-    {
-        abort_unless($appel->fichier_path, 404);
+{
+    abort_unless($appel->fichier_path, 404);
 
-        $filePath = $appel->fichier_path;
-        $fileName = $appel->fichier_nom ?? basename($filePath);
+    $filePath = $appel->fichier_path;
+    $fileName = $appel->fichier_nom ?? basename($filePath);
 
-        return Storage::disk('public')->download($filePath, $fileName);
-    }
+    abort_unless(
+        Storage::disk('public')->exists($filePath),
+        404,
+        'Le fichier demandé est introuvable.'
+    );
+
+    $appel->increment('download_count');
+
+    return Storage::disk('public')->download($filePath, $fileName);
+}
 }

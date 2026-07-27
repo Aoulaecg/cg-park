@@ -37,8 +37,8 @@
     @endif
 </form>
 
-<div class="admin-card" style="padding: 0;">
-    <table class="admin-table">
+<div class="admin-card" style="padding: 0;overflow-x: auto;">
+    <table class="admin-table" style="min-width: 1100px;">
         <thead>
             <tr>
                 <th>N°</th>
@@ -47,6 +47,7 @@
                 <th>Date limite</th>
                 <th>Statut</th>
                 <th>Fichier</th>
+                <th>Téléchargements</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -60,7 +61,7 @@
                         —
                     @endif
                 </td>
-                <td style="max-width: 320px;">
+                <td style="max-width: 250px;">
                     <div style="font-weight: 700; color: #1e2a4a;">{{ $appel->titre }}</div>
                     <div style="font-size: 0.75rem; color: #94a3b8;">{{ \Illuminate\Support\Str::limit($appel->objet, 90) }}</div>
                 </td>
@@ -120,8 +121,14 @@
                         <span style="color: #94a3b8;">—</span>
                     @endif
                 </td>
+
                 <td>
-                    <div style="display: flex; gap: 8px;">
+                       <span class="badge badge-blue">
+                    {{ $appel->download_count ?? 0 }}
+                       </span>
+                </td>
+                <td>
+                    <div style="display: flex; gap: 8px;white-space: nowrap;">
                         <a href="{{ route('console.appels-offres.edit', $appel) }}" class="btn btn-outline btn-sm">Modifier</a>
                         <form method="POST" action="{{ route('console.appels-offres.destroy', $appel) }}" onsubmit="return confirm('Supprimer cet appel d\'offres ?')">
                             @csrf
@@ -133,7 +140,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="7">
+                <td colspan="8">
                     <div class="empty-state">
                         <svg width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                         <h3>Aucun appel d'offres trouvé</h3>

@@ -20,12 +20,15 @@ class AppelOffre extends Model
         'fichier_path',
         'fichier_nom',
         'sort_order',
+        'download_count',
+
     ];
 
     protected $casts = [
         'date_publication' => 'date',
         'date_limite'      => 'date',
         'sort_order'       => 'integer',
+        'download_count'   => 'integer',
     ];
 
     public function scopeOuvert(Builder $query): Builder
