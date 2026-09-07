@@ -123,10 +123,16 @@
                 </td>
 
                 <td>
-                       <span class="badge badge-blue">
-                    {{ $appel->download_count ?? 0 }}
-                       </span>
-                </td>
+    <button
+        type="button"
+        class="badge badge-blue downloads-count-button"
+        data-downloads-url="{{ route('console.appels-offres.downloads', $appel) }}"
+        data-appel-object="{{ $appel->objet }}"
+        style="border: none; cursor: pointer; background: transparent;"
+    >
+        {{ $appel->download_count ?? 0 }}
+    </button>
+</td>
                 <td>
                     <div style="display: flex; gap: 8px;white-space: nowrap;">
                         <a href="{{ route('console.appels-offres.edit', $appel) }}" class="btn btn-outline btn-sm">Modifier</a>
@@ -165,5 +171,136 @@
     </div>
     @endif
 </div>
+
+<div id="downloadsModal" class="downloads-modal" aria-hidden="true">
+    <div class="downloads-modal-overlay"></div>
+
+    <div
+        class="downloads-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="downloadsModalTitle"
+    >
+        <button
+            type="button"
+            id="closeDownloadsModal"
+            class="downloads-modal-close"
+            aria-label="Fermer"
+        >
+            ×
+        </button>
+
+        <h2 id="downloadsModalTitle">
+            Sociétés ayant téléchargé
+        </h2>
+
+        <p
+            id="downloadsModalObject"
+            class="downloads-modal-object"
+        ></p>
+
+        <div id="downloadsModalBody">
+            <p>Chargement...</p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('downloadsModal');
+    const modalBody = document.getElementById('downloadsModalBody');
+    const modalObject = document.getElementById('downloadsModalObject');
+    const closeButton = document.getElementById('closeDownloadsModal');
+    const overlay = modal.querySelector('.downloads-modal-overlay');
+
+    function openModal() {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+    }
+
+    function escapeHtml(value) {
+        const div = document.createElement('div');
+        div.textContent = value ?? '';
+        return div.innerHTML;
+    }
+
+    document.querySelectorAll('.downloads-count-button').forEach(function (button) {
+        button.addEventListener('click', async function () {
+            openModal();
+
+            modalObject.textContent = button.dataset.appelObject;
+            modalBody.innerHTML = '<p>Chargement...</p>';
+
+            try {
+                const response = await fetch(button.dataset.downloadsUrl, {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erreur lors du chargement');
+                }
+
+                const data = await response.json();
+
+                if (!data.downloads || data.downloads.length === 0) {
+                    modalBody.innerHTML =
+                        '<p>Aucune société enregistrée pour cet appel d’offres.</p>';
+                    return;
+                }
+
+                let html = `
+                    <table class="downloads-list-table">
+                        <thead>
+                            <tr>
+                                <th>Société</th>
+                                <th>Date du téléchargement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                data.downloads.forEach(function (download) {
+                    html += `
+                        <tr>
+                            <td>${escapeHtml(download.company_name)}</td>
+                            <td>${escapeHtml(download.downloaded_at)}</td>
+                        </tr>
+                    `;
+                });
+
+                html += `
+                        </tbody>
+                    </table>
+                `;
+
+                modalBody.innerHTML = html;
+            } catch (error) {
+                modalBody.innerHTML =
+                    '<p>Impossible de charger la liste des téléchargements.</p>';
+            }
+        });
+    });
+
+    closeButton.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+            closeModal();
+        }
+    });
+});
+</script>
+
+
+
 
 @endsection

@@ -447,3 +447,140 @@
         text-align: right;
     }
 }
+
+
+
+.tenders-action-primary {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .download-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .download-modal.is-open {
+            display: flex;
+        }
+
+        .download-modal-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .download-modal-content {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            padding: 32px;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            z-index: 1;
+        }
+
+        .download-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            border: none;
+            background: transparent;
+            font-size: 30px;
+            line-height: 1;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .download-modal-title {
+            margin: 0 0 10px;
+            color: #071b35;
+            font-size: 1.5rem;
+        }
+
+        .download-modal-description {
+            margin: 0 0 24px;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .download-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #071b35;
+            font-weight: 600;
+        }
+
+        .download-form-group input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .download-form-group input:focus {
+            outline: none;
+            border-color: #0f766e;
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+        }
+
+        .download-modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .download-modal-cancel,
+        .download-modal-submit {
+            padding: 11px 20px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .download-modal-cancel {
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #334155;
+        }
+
+        .download-modal-submit {
+            border: none;
+            background: #0f766e;
+            color: #ffffff;
+        }
+
+        @media (max-width: 576px) {
+            .download-modal-content {
+                padding: 28px 20px 20px;
+            }
+
+            .download-modal-actions {
+                flex-direction: column-reverse;
+            }
+
+            .download-modal-cancel,
+            .download-modal-submit {
+                width: 100%;
+            }
+        }
+
+
+
+
+
+
+
+        

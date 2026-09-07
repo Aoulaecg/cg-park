@@ -43,7 +43,7 @@ Route::get('/locale/{locale}', [LocaleController::class, 'update'])->name('local
 
 // ─── Téléchargement de fichiers ────────────────────────────────────────────
 
-Route::get('/appels-offres/download/{appel}', [AppelsOffresController::class, 'download'])->name('appels-offres.download');
+Route::post('/appels-offres/download/{appel}', [AppelsOffresController::class, 'download'])->name('appels-offres.download');
 
 // ─── Console admin ──────────────────────────────────────────────────────────
 
@@ -69,6 +69,12 @@ Route::prefix('console')->name('console.')->group(function () {
                 'update'  => 'parkings.update',
                 'destroy' => 'parkings.destroy',
             ]);
+            Route::get(
+            'appels-offres/{appelsOffre}/telechargements',
+             [AdminAppelOffreController::class, 'downloads']
+             )->name('appels-offres.downloads');
+
+
 
         // Gestion des appels d'offres
         Route::resource('appels-offres', AdminAppelOffreController::class)

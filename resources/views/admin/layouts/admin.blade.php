@@ -656,7 +656,90 @@
             .form-grid { grid-template-columns: 1fr; }
             .page-header { flex-direction: column; align-items: flex-start; }
         }
+
+
+
+/* ===========================
+   Fenêtre des téléchargements
+=========================== */
+
+.downloads-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.downloads-modal.is-open {
+    display: flex;
+}
+
+.downloads-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+}
+
+.downloads-modal-content {
+    position: relative;
+    background: white;
+    width: 700px;
+    max-width: 95%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 25px 70px rgba(0,0,0,.20);
+    z-index: 1;
+}
+
+.downloads-modal-close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.downloads-modal-object {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.downloads-list-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.downloads-list-table th,
+.downloads-list-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+.downloads-list-table th {
+    background: #f8fafc;
+    font-weight: 700;
+}
+
+.downloads-count-button {
+    cursor: pointer;
+}
+
+.downloads-count-button:hover {
+    opacity: .8;
+}
+
+
     </style>
+
+
+
     @stack('styles')
 </head>
 <body>

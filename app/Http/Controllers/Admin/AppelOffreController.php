@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Http\JsonResponse;
 
 class AppelOffreController extends Controller
 {
@@ -96,4 +97,24 @@ class AppelOffreController extends Controller
 
         return Storage::disk('public')->download($filePath, $fileName);
     }
+
+public function downloads(AppelOffre $appelsOffre): JsonResponse
+{
+    $downloads = $appelsOffre->downloads()
+        ->latest()
+        ->get()
+        ->map(function ($download) {
+            return [
+                'company_name' => $download->company_name,
+                'downloaded_at' => $download->created_at->format('d/m/Y à H:i'),
+            ];
+        });
+
+    return response()->json([
+        'appel' => $appelsOffre->objet,
+        'count' => $downloads->count(),
+        'downloads' => $downloads,
+    ]);
+}
+
 }

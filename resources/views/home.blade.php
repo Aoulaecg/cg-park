@@ -198,16 +198,21 @@
                 <p class="mobile-app-eyebrow">{{ $mobileApp['eyebrow'] }}</p>
                 <h2 class="mobile-app-title">{{ $mobileApp['title'] }}</h2>
                 <p class="mobile-app-text">{{ $mobileApp['description'] }}</p>
-                <!-- <div class="store-badges mobile-app-store-badges">
-                    <a href="#" class="store-badge-link" aria-label="{{ __('home.download_app_store') }}">
+                
+                
+                
+                <div class="store-badges mobile-app-store-badges">
+                    <a href="https://apps.apple.com/app/id6785426019" class="store-badge-link" aria-label="{{ __('home.download_app_store') }}">
                         <img src="{{ $mobileApp['app_store'] }}" alt="Download on the App Store">
                     </a>
-                    <a href="#" class="store-badge-link" aria-label="{{ __('home.download_google_play') }}">
+                    <a href="https://play.google.com/store/apps/details?id=ma.cgpark.mobileparkapp" class="store-badge-link" aria-label="{{ __('home.download_google_play') }}">
                         <img src="{{ $mobileApp['google_play'] }}" alt="Get it on Google Play">
                     </a>
-                </div> -->
+                </div>
 
-                <div class="mobile-app-coming-soon">
+
+                
+                <!-- <div class="mobile-app-coming-soon">
     <span class="coming-soon-badge">
          Disponible prochainement
     </span>
@@ -216,7 +221,7 @@
         Notre application mobile sera bientôt disponible
         sur App Store et Google Play.
     </p>
-</div>
+</div> -->
             </div>
         </div>
     </section>

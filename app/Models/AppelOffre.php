@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AppelOffre extends Model
 {
@@ -45,4 +46,9 @@ class AppelOffre extends Model
     {
         return $this->date_publication ? $this->date_publication->format('d/m/Y') : '';
     }
+
+    public function downloads(): HasMany
+{
+    return $this->hasMany(AppelOffreDownload::class);
+}
 }

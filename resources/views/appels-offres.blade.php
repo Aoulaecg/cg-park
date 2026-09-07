@@ -66,16 +66,14 @@
                                                 $isArchive = in_array($extension, ['zip', 'rar']);
                                             @endphp
                                             <div class="tenders-actions">
-                                                <a href="{{ route('appels-offres.download', $appel) }}"
-                                                   class="tenders-action tenders-action-primary">
-                                                    @if ($isArchive)
-                                                        <!-- <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right:4px;">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11v6m-3-3h6"/>
-                                                        </svg> -->
-                                                    @endif
-                                                    {{ __('appels_offres.download') }}
-                                                </a>
+                                                <button
+                                                    type="button"
+                                                    class="tenders-action tenders-action-primary open-download-modal"
+                                                    data-download-action="{{ route('appels-offres.download', $appel) }}"
+                                                    data-appel-object="{{ $appel->objet }}"
+                                                >
+                                                 {{ __('appels_offres.download') }}
+                                                </button>
                                                 <!-- @if (!$isArchive)
                                                     <a href="{{ Storage::url($appel->fichier_path) }}"
                                                        class="tenders-action tenders-action-secondary"
@@ -102,4 +100,117 @@
             </div>
         </div>
     </section>
+    <div id="downloadModal" class="download-modal" aria-hidden="true">
+    <div class="download-modal-overlay"></div>
+
+    <div class="download-modal-content" role="dialog" aria-modal="true">
+        <button
+            type="button"
+            class="download-modal-close"
+            id="closeDownloadModal"
+            aria-label="Fermer"
+        >
+            ×
+        </button>
+
+        <h2 class="download-modal-title">
+            Téléchargement du dossier
+        </h2>
+
+        <p class="download-modal-description" id="downloadAppelObject"></p>
+
+        <form
+            method="POST"
+            id="downloadCompanyForm"
+            action=""
+        >
+            @csrf
+
+            <div class="download-form-group">
+                <label for="company_name">
+                    Nom de la société <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="company_name"
+                    id="company_name"
+                    maxlength="255"
+                    required
+                    autocomplete="organization"
+                    placeholder="Saisissez le nom de votre société"
+                >
+            </div>
+
+            <div class="download-modal-actions">
+                <button
+                    type="button"
+                    class="download-modal-cancel"
+                    id="cancelDownloadModal"
+                >
+                    Annuler
+                </button>
+
+                <button
+                    type="submit"
+                    class="download-modal-submit"
+                >
+                    Télécharger
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('downloadModal');
+        const form = document.getElementById('downloadCompanyForm');
+        const companyInput = document.getElementById('company_name');
+        const appelObject = document.getElementById('downloadAppelObject');
+
+        const closeButton = document.getElementById('closeDownloadModal');
+        const cancelButton = document.getElementById('cancelDownloadModal');
+        const overlay = modal.querySelector('.download-modal-overlay');
+
+        const downloadButtons = document.querySelectorAll('.open-download-modal');
+
+        function openModal(button) {
+            form.action = button.dataset.downloadAction;
+            appelObject.textContent = button.dataset.appelObject;
+
+            companyInput.value = '';
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+
+            setTimeout(function () {
+                companyInput.focus();
+            }, 100);
+        }
+
+        function closeModal() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+
+            form.action = '';
+            companyInput.value = '';
+        }
+
+        downloadButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                openModal(button);
+            });
+        });
+
+        closeButton.addEventListener('click', closeModal);
+        cancelButton.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+                closeModal();
+            }
+        });
+    });
+</script>
 @endsection
