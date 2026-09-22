@@ -54,6 +54,7 @@
                         <option value="ouvert"  {{ old('statut', $appel->statut ?? 'ouvert') === 'ouvert'  ? 'selected' : '' }}>Ouvert</option>
                         <option value="ferme"   {{ old('statut', $appel->statut ?? '') === 'ferme'   ? 'selected' : '' }}>Fermé</option>
                         <option value="archive" {{ old('statut', $appel->statut ?? '') === 'archive' ? 'selected' : '' }}>Archivé</option>
+                        <option value="infructueux" {{ old('statut', $appel->statut ?? '') === 'infructueux' ? 'selected' : '' }}>Infructueux</option>
                     </select>
                     @error('statut')<span class="form-error">{{ $message }}</span>@enderror
                 </div>

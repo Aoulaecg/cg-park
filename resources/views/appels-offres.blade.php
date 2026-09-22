@@ -68,6 +68,8 @@
         Archivé
     @elseif ($appel->statut === 'ouvert')
         Ouvert
+        @elseif ($appel->statut === 'infructueux')
+        infructueux
     @else
         {{ ucfirst($appel->statut) }}
     @endif
