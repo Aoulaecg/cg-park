@@ -26,8 +26,10 @@
     <select name="statut" class="form-control" style="max-width: 180px;">
         <option value="">Tous les statuts</option>
         <option value="ouvert"  {{ request('statut') === 'ouvert'  ? 'selected' : '' }}>Ouvert</option>
-        <option value="ferme"   {{ request('statut') === 'ferme'   ? 'selected' : '' }}>Fermé</option>
-        <option value="archive" {{ request('statut') === 'archive' ? 'selected' : '' }}>Archivé</option>
+        <option value="ferme"   {{ request('statut') === 'fermé'   ? 'selected' : '' }}>Fermé</option>
+        <option value="archive" {{ request('statut') === 'archivé' ? 'selected' : '' }}>Archivé</option>
+         <option value="encours" {{ request('statut') === 'encours' ? 'selected' : '' }}>En cours</option>
+          <option value="infructueux" {{ request('statut') === 'infructueux' ? 'selected' : '' }}>Infructueux</option>
     </select>
 
     <button type="submit" class="btn btn-outline">Filtrer</button>

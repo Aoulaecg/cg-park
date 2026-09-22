@@ -47,6 +47,7 @@
                             <tr>
                                 <th scope="col">{{ __('appels_offres.table_column_object') }}</th>
                                 <th scope="col">{{ __('appels_offres.table_column_deadline') }}</th>
+                                <th scope="col">STATUT</th>
                                 <th scope="col">{{ __('appels_offres.table_column_action') }}</th>
                             </tr>
                         </thead>
@@ -59,6 +60,18 @@
                                     <td data-label="{{ __('appels_offres.table_column_deadline') }}">
                                         <span class="tenders-deadline">{{ $appel->date_limite_formatted ?: '—' }}</span>
                                     </td>
+
+                                    <td data-label="Statut">
+    @if ($appel->statut === 'ferme')
+        Fermé
+    @elseif ($appel->statut === 'archive')
+        Archivé
+    @elseif ($appel->statut === 'ouvert')
+        Ouvert
+    @else
+        {{ ucfirst($appel->statut) }}
+    @endif
+</td>
                                     <td data-label="{{ __('appels_offres.table_column_action') }}">
                                         @if ($appel->fichier_path)
                                             @php
@@ -89,7 +102,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="3" style="text-align:center;padding:32px;color:rgba(7,27,53,0.5);">
+                                    <td colspan="4" style="text-align:center;padding:32px;color:rgba(7,27,53,0.5);">
                                         Aucun appel d'offres disponible pour le moment.
                                     </td>
                                 </tr>
