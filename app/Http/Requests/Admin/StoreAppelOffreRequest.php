@@ -22,7 +22,7 @@ class StoreAppelOffreRequest extends FormRequest
             'description'      => ['nullable', 'string'],
             'date_publication' => ['nullable', 'date'],
             'date_limite'      => ['nullable', 'date'],
-            'statut'           => ['required', 'in:ouvert,ferme,archive'],
+            'statut'           => ['required', 'in:ouvert,ferme,archive,infructueux'],
             'sort_order'       => ['integer', 'min:0'],
             'fichier'          => [$isUpdate ? 'nullable' : 'nullable', 'file', 'mimes:pdf,doc,docx,zip,rar', 'max:20480'],
         ];
